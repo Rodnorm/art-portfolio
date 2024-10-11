@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/art-portfolio/static/css/main.d5918a75.css",
+    "main.js": "/art-portfolio/static/js/main.534666b2.js",
+    "static/js/453.acca0757.chunk.js": "/art-portfolio/static/js/453.acca0757.chunk.js",
+    "static/media/Frajola.JPEG": "/art-portfolio/static/media/Frajola.8b8494ae2bf70a5a723d.JPEG",
+    "static/media/CopiaAlphonseMucha.JPEG": "/art-portfolio/static/media/CopiaAlphonseMucha.c57576bd0048a6ef750e.JPEG",
+    "static/media/Perfil.JPEG": "/art-portfolio/static/media/Perfil.d6e9060fc01ee81dec9f.JPEG",
+    "static/media/Homem_com_cigarro.JPEG": "/art-portfolio/static/media/Homem_com_cigarro.ff9728261e293bbcecd1.JPEG",
+    "static/media/Gata_Lily.JPEG": "/art-portfolio/static/media/Gata_Lily.d2e8be28c5fa30e3637d.JPEG",
+    "static/media/MulherComCabeloCacheadoPintura.JPEG": "/art-portfolio/static/media/MulherComCabeloCacheadoPintura.604d597ff90077db9c65.JPEG",
+    "static/media/Gagarin.JPEG": "/art-portfolio/static/media/Gagarin.2e6f937a5a2e4ee93e49.JPEG",
+    "static/media/Mulher_com_sorriso.JPEG": "/art-portfolio/static/media/Mulher_com_sorriso.afde8f28e45e71d8d2fa.JPEG",
+    "static/media/Estudo_tonal.JPEG": "/art-portfolio/static/media/Estudo_tonal.00c815752be0c7e90aa4.JPEG",
+    "static/media/LeonardoDiCaprioPintura.JPEG": "/art-portfolio/static/media/LeonardoDiCaprioPintura.12a86fcd627b4ee08592.JPEG",
+    "static/media/Homem_com_pano.JPEG": "/art-portfolio/static/media/Homem_com_pano.6509a159e0ce82826db2.JPEG",
+    "static/media/MulherComFlor.JPEG": "/art-portfolio/static/media/MulherComFlor.b2fa98ee853985355549.JPEG",
+    "static/media/Matogrosso.JPEG": "/art-portfolio/static/media/Matogrosso.1877f4ce3a542c493521.JPEG",
+    "static/media/DiCaprio.JPEG": "/art-portfolio/static/media/DiCaprio.20aaa3c49164a6adfec5.JPEG",
+    "static/media/Buarque.JPEG": "/art-portfolio/static/media/Buarque.cd2d0c54684b35b651cb.JPEG",
+    "static/media/TerryCrewsPintura.JPEG": "/art-portfolio/static/media/TerryCrewsPintura.81d9eebca838211d8c6c.JPEG",
+    "static/media/Crews.JPEG": "/art-portfolio/static/media/Crews.7b5988b3cdb44e1d2dcc.JPEG",
+    "static/media/Vila.JPEG": "/art-portfolio/static/media/Vila.fe69246764bd40f39d8c.JPEG",
+    "static/media/Garoto_bebendo.JPEG": "/art-portfolio/static/media/Garoto_bebendo.2f109de1f38be921d6f5.JPEG",
+    "static/media/assinatura.JPEG": "/art-portfolio/static/media/assinatura.01bb3c37a06ed1d0beaf.JPEG",
+    "static/media/Gagarin Focus.JPEG": "/art-portfolio/static/media/Gagarin Focus.2362e1367c53e9d7d5da.JPEG",
+    "static/media/youtube.svg": "/art-portfolio/static/media/youtube.20e8db62d4b300e4425446c0cecde255.svg",
+    "static/media/instagram.svg": "/art-portfolio/static/media/instagram.6ed2cb5264b2240800b4eca149b65721.svg",
+    "index.html": "/art-portfolio/index.html",
+    "main.d5918a75.css.map": "/art-portfolio/static/css/main.d5918a75.css.map",
+    "main.534666b2.js.map": "/art-portfolio/static/js/main.534666b2.js.map",
+    "453.acca0757.chunk.js.map": "/art-portfolio/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5918a75.css",
+    "static/js/main.534666b2.js"
+  ]
+}
