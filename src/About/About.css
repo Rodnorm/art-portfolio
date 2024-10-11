@@ -1,0 +1,59 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinha o conteúdo ao lado esquerdo */
+  padding: 50px; 
+  background-image: url('../assets/img/assinatura.JPEG'); /* Substitua pelo caminho da imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Faz a seção ocupar toda a altura da tela */
+  position: relative; /* Necessário para o overlay */
+  color: white;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade do overlay */
+  z-index: 1;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  max-width: 800px;
+  margin: 0; /* Remover centralização */
+  gap: 20px; /* Espaçamento entre a foto e o texto */
+  position: relative;
+  z-index: 2;
+  justify-content: flex-start; /* Garante que o conteúdo seja alinhado à esquerda */
+}
+
+.about-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left; /* Garante que o texto seja alinhado à esquerda */
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ddd;
+  text-align: justify; /* Alinha o texto justificado */
+}
