@@ -6,7 +6,7 @@
   position: relative;
   bottom: 0;
   width: 100%;
-  max-width: calc(100vw - 140px);
+  max-width: calc(100vw);
 }
 
 p {

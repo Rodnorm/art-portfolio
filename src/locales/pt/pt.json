@@ -1,0 +1,93 @@
+{
+    "traditional_art": "Arte Tradicional",
+    "nav": {
+        "home": "Home",
+        "contact": "Contato",
+        "about": "Sobre Mim",
+        "work": "Meu Trabalho",
+        "prices": "Preços",
+        "en": "In English",
+        "de": "Auf Deutsch",
+        "pt": "Em Português"
+    },
+    "about": {
+        "experience": "Sou um artista com anos de experiência em desenho a lápis, carvão e canetas, além de pintar em óleo e aquarela. Gosto de fazer retratos de pessoas e animais, mas também trabalho com paisagens. Minha paixão pela arte me motiva a explorar diferentes técnicas e estilos, sempre buscando capturar a beleza do mundo ao meu redor. Atualmente resido e trabalho na cidade de Essen na Alemanha."
+    },
+    "contact": {
+        "follow_me": "Me siga nas redes sociais",
+        "get_in_touch": "Entre em Contato",
+        "name": "Nome",
+        "message": "Mensagem",
+        "send_wpp": "Enviar via WhatsApp",
+        "wpp": {
+            "message": "Olá, me chamo {{name}}. {{message}}"
+        }
+    },
+    "notes": {
+        "no_frames_note": "Os quadros não acompanham moldura",
+        "one_month_note": "Necessita de um mês para ficar pronto devido à secagem."
+    },
+    "footer": {
+        "footer_rights": "Todos os direitos reservados"
+    },
+    "work": {
+        "label": "Trabalhos",
+        "description1": "Chico Buarque. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
+        "description2": "Leonardo DiCaprio. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
+        "description3": "Terry Crews. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
+        "description4": "Aquarela sobre Papel Canson 29,7 cm x 42cm.",
+        "description5": "Grafite sobre Papel Canson 29,7 cm x 42cm.",
+        "description6": "Grafite sobre Papel Canson A4.",
+        "description7": "Caneta sobre Papel Canson 29,7 cm x 42cm.",
+        "description8": "Ney Matogrosso. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
+        "description9": "Grafite sobre Papel Canson A4.",
+        "description10": "Aquarela e caneta sobre Papel Canson 5cm x 10cm.",
+        "description11": "Óleo sobre madeira preparada A4.",
+        "description12": "Óleo sobre madeira preparada A4.",
+        "description13": "Grafite sobre Papel Canson A4.",
+        "description14": "Cópia de uma obra do pintor Alphonse Mucha. Feita no estilo Belle Epoque. Aquarela e caneta sobre Papel Canson 29,7 cm x 42cm.",
+        "description15": "Óleo sobre tela. 60cm x 50cm.",
+        "description16": "Óleo sobre tela. 60cm x 50cm.",
+        "description17": "Óleo sobre tela. 60cm x 50cm.",
+        "description18": "Óleo sobre madeira preparada tamanho A4."
+    },
+    "carousel": {
+        "previous": "Anterior",
+        "next": "Próximo",
+        "zoom_in": "Ampliar",
+        "close": "Fechar"
+    },
+    "prices": {
+        "prices": "Preços",
+        "price": "Preço",
+        "note": "Nota",
+        "delivery_time": "Tempo de entrega",
+        "pencil_portrait": {
+            "name": "Retrato a lápis - Tamanho A4 (1 pessoa)",
+            "price": "150 reais + frete",
+            "additional": "Pessoa adicional: + 70 reais",
+            "note": "Necessita de duas semanas para ficar pronto. Não acompanha moldura."
+        },
+        "oil_portrait_a4": {
+            "name": "Retrato a óleo - Tamanho A4 (1 pessoa)",
+            "price": "400 reais + frete",
+            "note": "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura."
+        },
+        "oil_portrait_60x50": {
+            "name": "Retrato a óleo - Tamanho 60x50 cm (1 pessoa)",
+            "price": "600 reais + frete",
+            "additional": "Pessoa adicional: + 200 reais",
+            "note": "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura."
+        },
+        "oil_portrait_pet": {
+            "name": "Retrato a óleo de animais - Tamanho A4",
+            "price": "260 reais por animal + frete",
+            "note": "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura"
+        },
+        "watercolor": {
+            "name": "Aquarela Estilo Belle Époque - Tamanho 29x42",
+            "price": "400 reais + frete",
+            "note": "Necessita de duas semanas para ficar pronto. Inclui moldura de madeira."
+        }
+    }
+}

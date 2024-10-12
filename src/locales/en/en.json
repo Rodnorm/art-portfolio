@@ -1,0 +1,93 @@
+{
+    "traditional_art": "Traditional Art",
+    "nav": {
+        "home": "Home",
+        "contact": "Contact",
+        "about": "About Me",
+        "work": "My Work",
+        "prices": "Prices",
+        "en": "In English",
+        "de": "Auf Deutsch",
+        "pt": "Em Português"
+    },
+    "about": {
+        "experience": "I am an artist with years of experience in drawing with pencil, charcoal, and pens, as well as painting in oil and watercolor. I enjoy creating portraits of people and animals, but I also work with landscapes. My passion for art motivates me to explore different techniques and styles, always seeking to capture the beauty of the world around me. Currently, I reside and work in the city of Essen in Germany."
+    },
+    "contact": {
+        "follow_me": "Follow me on social media",
+        "get_in_touch": "Get in Touch",
+        "name": "Name",
+        "message": "Message",
+        "send_wpp": "Send via WhatsApp",
+        "wpp": {
+            "message": "Hello, my name is {{name}}. {{message}}"
+        }
+    },
+    "notes": {
+        "no_frames_note": "Frames are not included with the paintings",
+        "one_month_note": "It takes one month to be ready due to drying time."
+    },
+    "footer": {
+        "footer_rights": "All rights reserved"
+    },
+    "work": {
+        "label": "Works",
+        "description1": "Chico Buarque. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
+        "description2": "Leonardo DiCaprio. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
+        "description3": "Terry Crews. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
+        "description4": "Watercolor on Canson paper 29.7 cm x 42 cm.",
+        "description5": "Graphite on Canson paper 29.7 cm x 42 cm.",
+        "description6": "Graphite on Canson paper A4.",
+        "description7": "Pen on Canson paper 29.7 cm x 42 cm.",
+        "description8": "Ney Matogrosso. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
+        "description9": "Graphite on Canson paper A4.",
+        "description10": "Watercolor and pen on Canson paper 5 cm x 10 cm.",
+        "description11": "Oil on prepared wood A4.",
+        "description12": "Oil on prepared wood A4.",
+        "description13": "Graphite on Canson paper A4.",
+        "description14": "Copy of a work by painter Alphonse Mucha. Made in the Belle Époque style. Watercolor and pen on Canson paper 29.7 cm x 42 cm.",
+        "description15": "Oil on canvas. 60 cm x 50 cm.",
+        "description16": "Oil on canvas. 60 cm x 50 cm.",
+        "description17": "Oil on canvas. 60 cm x 50 cm.",
+        "description18": "Oil on prepared wood A4."
+    },
+    "carousel": {
+        "previous": "Previous",
+        "next": "Next",
+        "zoom_in": "Zoom In",
+        "close": "Close"
+    },
+    "prices": {
+        "prices": "Prices",
+        "price": "Price",
+        "note": "Note",
+        "delivery_time": "Delivery Time",
+        "pencil_portrait": {
+            "name": "Pencil Portrait - Size A4 (1 person)",
+            "price": "30 euros + shipping",
+            "additional": "Additional person: + 15 euros",
+            "note": "Takes two weeks to be ready. Does not include a frame."
+        },
+        "oil_portrait_a4": {
+            "name": "Oil Portrait - Size A4 (1 person)",
+            "price": "80 euros + shipping",
+            "note": "Takes one month to be ready due to drying time. Does not include a frame."
+        },
+        "oil_portrait_60x50": {
+            "name": "Oil Portrait - Size 60x50 cm (1 person)",
+            "price": "120 euros + shipping",
+            "additional": "Additional person: + 40 euros",
+            "note": "Takes one month to be ready due to drying time. Does not include a frame."
+        },
+        "oil_portrait_pet": {
+            "name": "Oil Portrait of Animals - Size A4",
+            "price": "50 euros per animal + shipping",
+            "note": "Takes one month to be ready due to drying time. Does not include a frame."
+        },
+        "watercolor": {
+            "name": "Belle Époque Style Watercolor - Size 29x42",
+            "price": "80 euros + shipping",
+            "note": "Takes two weeks to be ready. Includes wooden frame."
+        }
+    }
+}

@@ -1,29 +1,27 @@
+import "./i18n";
 import "./App.css";
 import About from "./About/About";
+import Home from "./Home/Home";
+import Box from "@mui/material/Box";
 import Trabalhos from "./Work/Work";
 import Footer from "./Footer/Footer";
-import Navbar from "./navbar/Navbar";
 import Prices from "./Prices/Prices";
 import Contact from "./Contact/Contact";
+import PersistentDrawerRight from "./navbar/NavbarMui";
 
 function App() {
 	return (
-		<div className="App">
-			<Navbar />
-			<div className="content">
-				<section id="home">
-					<div>
-						<p className="title">Rodrigo Normando</p>
-						<p className="subtitle"> Arte Tradicional</p>
-					</div>
-				</section>
+		<Box className="App">
+			<PersistentDrawerRight />
+			<Box className="content">
+				<Home />
 				<Trabalhos />
 				<About />
 				<Prices />
 				<Contact />
 				<Footer />
-			</div>
-		</div>
+			</Box>
+		</Box>
 	);
 }
 

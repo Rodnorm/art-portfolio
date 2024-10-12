@@ -1,15 +1,48 @@
-.about-section {
+/* .about-section {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Alinha o conteúdo ao lado esquerdo */
-  padding: 50px; 
-  background-image: url('../assets/img/assinatura.JPEG'); /* Substitua pelo caminho da imagem de fundo */
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('../assets/img/assinatura.JPEG');
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Faz a seção ocupar toda a altura da tela */
-  position: relative; /* Necessário para o overlay */
+  height: 100vh;
+  position: relative;
   color: white;
-}
+} */
+
+
+/* #about::before {
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/img/assinatura.JPEG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5;
+    z-index: -1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+        /* color: 'white', // Cor do texto em contraste com o fundo
+        textAlign: 'center',
+        backgroundImage: 'url(/path_to_your_background_image.jpg)', // Caminho para a imagem de fundo
+        backgroundSize: 'cover', // A imagem cobre toda a seção
+        backgroundPosition: 'center', // Centraliza a imagem
+        backgroundRepeat: 'no-repeat', // Evita repetição da imagem */
+
+
+
+
+/* } */
 
 .about-section::before {
   content: '';
@@ -18,19 +51,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade do overlay */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
 .about-content {
   display: flex;
-  flex-direction: row;
   max-width: 800px;
-  margin: 0; /* Remover centralização */
-  gap: 20px; /* Espaçamento entre a foto e o texto */
+  margin: 0;
+  gap: 20px;
   position: relative;
   z-index: 2;
-  justify-content: flex-start; /* Garante que o conteúdo seja alinhado à esquerda */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-photo {
@@ -38,22 +72,31 @@
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
+  align-content: center;
 }
 
 .about-text {
   flex: 1;
-  text-align: left; /* Garante que o texto seja alinhado à esquerda */
+  text-align: left;
+  max-width: 80%;
+  z-index: 2;
 }
 
 .about-text h2 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #fff;
+  text-align: center;
 }
 
 .about-text p {
   font-size: 16px;
   line-height: 1.5;
   color: #ddd;
-  text-align: justify; /* Alinha o texto justificado */
+  text-align: center;
+}
+
+.image-wrapper {
+  z-index: 2;
+  margin-top: 4rem;
 }

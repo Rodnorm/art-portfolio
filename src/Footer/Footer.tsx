@@ -1,13 +1,16 @@
 import React from "react";
 import "./Footer.css";
-import { ReactComponent as InstagramIcon } from "../assets/icons/instagram.svg";
-import { ReactComponent as YouTubeIcon } from "../assets/icons/youtube.svg";
+import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
+	const { t } = useTranslation();
 	return (
-		<footer className="footer" id="footer">
-			<p>© {new Date().getFullYear()} Todos os direitos reservados</p>
-		</footer>
+		<Box className="footer" id="footer">
+			<Typography>
+				© {new Date().getFullYear()} {t("footer.footer_rights")}
+			</Typography>
+		</Box>
 	);
 };
 

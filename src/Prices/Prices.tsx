@@ -1,5 +1,7 @@
 import React from "react";
 import "./Prices.css";
+import { Box, Container, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 // Definindo o tipo do objeto de preço
 type PriceItem = {
@@ -10,57 +12,63 @@ type PriceItem = {
 	deliveryTime?: string;
 };
 
-// Lista de preços
-const priceList: PriceItem[] = [
-	{
-		name: "Retrato a lápis - Tamanho A4 (1 pessoa)",
-		price: "30 euros",
-		additional: "Pessoa adicional: +15 euros",
-		note: "Necessita de duas semanas para ficar pronto. Não acompanha moldura.",
-	},
-	{
-		name: "Retrato a óleo - Tamanho A4 (1 pessoa)",
-		price: "80 euros",
-		note: "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura.",
-	},
-	{
-		name: "Retrato a óleo - Tamanho 60x50 cm (1 pessoa)",
-		price: "120 euros",
-		additional: "Pessoa adicional: +40 euros",
-		note: "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura",
-	},
-	{
-		name: "Retrato a óleo de animais - Tamanho A4",
-		price: "50 euros por animal",
-		note: "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura",
-	},
-	{
-		name: "Aquarela Estilo Belle Époque - Tamanho 29x42",
-		price: "80 euros",
-		note: "Necessita de duas semanas para ficar pronto. Inclui moldura de madeira",
-	},
-];
-
 const Prices: React.FC = () => {
+	const { t } = useTranslation();
+	const priceList: PriceItem[] = [
+		{
+			name: t("prices.pencil_portrait.name"),
+			price: t("prices.pencil_portrait.price"),
+			additional: t("prices.pencil_portrait.additional"),
+			note: t("prices.pencil_portrait.note"),
+		},
+		{
+			name: t("prices.oil_portrait_a4.name"),
+			price: t("prices.oil_portrait_a4.price"),
+			note: t("prices.oil_portrait_a4.note"),
+		},
+		{
+			name: t("prices.oil_portrait_60x50.name"),
+			price: t("prices.oil_portrait_60x50.price"),
+			additional: t("prices.oil_portrait_60x50.additional"),
+			note: t("prices.oil_portrait_60x50.note"),
+		},
+		{
+			name: t("prices.oil_portrait_pet.name"),
+			price: t("prices.oil_portrait_pet.price"),
+			note: t("prices.oil_portrait_pet.note"),
+		},
+		{
+			name: t("prices.watercolor.name"),
+			price: t("prices.watercolor.price"),
+			note: t("prices.watercolor.note"),
+		},
+	];
+
 	return (
-		<section className="prices-section" id="precos">
-			<h2 className="prices-title">Preços</h2>
-			<div className="prices-list">
+		<Container className="prices-section" id="precos">
+			<h2 className="prices-title">{t("prices.prices")}</h2>
+			<Box className="prices-list">
 				{priceList.map((item, index) => (
-					<div className="price-item" key={index}>
+					<Box className="price-item" key={index}>
 						<h3>{item.name}</h3>
-						<p>Preço: {item.price}</p>
+						<Typography>
+							{t("prices.price")}: {item.price}
+						</Typography>
 						{item.additional && <p>{item.additional}</p>}
 						{item.note && (
-							<p>
-								<strong>Nota:</strong> {item.note}
-							</p>
+							<Typography>
+								<strong>{t("prices.note")}:</strong> {item.note}
+							</Typography>
 						)}
-						{item.deliveryTime && <p>Tempo de entrega: {item.deliveryTime}</p>}
-					</div>
+						{item.deliveryTime && (
+							<Typography>
+								{t("prices.delivery_time")}: {item.deliveryTime}
+							</Typography>
+						)}
+					</Box>
 				))}
-			</div>
-		</section>
+			</Box>
+		</Container>
 	);
 };
 

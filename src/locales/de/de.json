@@ -1,0 +1,93 @@
+{
+    "traditional_art": "Traditionelle Kunst",
+    "nav": {
+        "home": "Startseite",
+        "contact": "Kontakt",
+        "about": "Über mich",
+        "work": "Meine Arbeit",
+        "prices": "Preise",
+        "en": "In English",
+        "de": "Auf Deutsch",
+        "pt": "Em Português"
+    },
+    "about": {
+        "experience": "Ich bin ein Künstler mit jahrelanger Erfahrung im Zeichnen mit Bleistift, Kohle und Stiften, sowie im Malen mit Öl und Aquarell. Ich mache gerne Porträts von Menschen und Tieren, arbeite aber auch mit Landschaften. Meine Leidenschaft für Kunst motiviert mich, verschiedene Techniken und Stile zu erkunden, immer bestrebt, die Schönheit der Welt um mich herum einzufangen. Derzeit wohne und arbeite ich in der Stadt Essen in Deutschland."
+    },
+    "contact": {
+        "follow_me": "Folgen Sie mir in den sozialen Medien",
+        "get_in_touch": "Kontaktieren Sie mich",
+        "name": "Name",
+        "message": "Nachricht",
+        "send_wpp": "Über WhatsApp senden",
+        "wpp": {
+            "message": "Hallo, mein Name ist {{name}}. {{message}}"
+        }
+    },
+    "notes": {
+        "no_frames_note": "Die Gemälde werden ohne Rahmen geliefert",
+        "one_month_note": "Es dauert einen Monat, um fertig zu werden, da die Farbe trocknen muss."
+    },
+    "footer": {
+        "footer_rights": "Alle Rechte vorbehalten"
+    },
+    "work": {
+        "label": "Arbeiten",
+        "description1": "Chico Buarque. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
+        "description2": "Leonardo DiCaprio. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
+        "description3": "Terry Crews. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
+        "description4": "Aquarell auf Canson Papier 29,7 cm x 42 cm.",
+        "description5": "Graphit auf Canson Papier 29,7 cm x 42 cm.",
+        "description6": "Graphit auf Canson Papier A4.",
+        "description7": "Stift auf Canson Papier 29,7 cm x 42 cm.",
+        "description8": "Ney Matogrosso. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
+        "description9": "Graphit auf Canson Papier A4.",
+        "description10": "Aquarell und Stift auf Canson Papier 5 cm x 10 cm.",
+        "description11": "Öl auf vorbereitetem Holz A4.",
+        "description12": "Öl auf vorbereitetem Holz A4.",
+        "description13": "Graphit auf Canson Papier A4.",
+        "description14": "Kopie eines Werks des Malers Alphonse Mucha. Im Belle Epoque Stil gefertigt. Aquarell und Stift auf Canson Papier 29,7 cm x 42 cm.",
+        "description15": "Öl auf Leinwand. 60 cm x 50 cm.",
+        "description16": "Öl auf Leinwand. 60 cm x 50 cm.",
+        "description17": "Öl auf Leinwand. 60 cm x 50 cm.",
+        "description18": "Öl auf vorbereitetem Holz A4."
+    },
+    "carousel": {
+        "previous": "Vorheriges",
+        "next": "Nächstes",
+        "zoom_in": "Vergrößern",
+        "close": "Schließen"
+    },
+    "prices": {
+        "prices": "Preise",
+        "price": "Preis",
+        "note": "Anmerkung",
+        "delivery_time": "Lieferzeit",
+        "pencil_portrait": {
+            "name": "Bleistiftporträt - Größe A4 (1 Person)",
+            "price": "30 Euro + Versand",
+            "additional": "Zusätzliche Person: + 15 Euro",
+            "note": "Fertigstellung in zwei Wochen. Ohne Rahmen."
+        },
+        "oil_portrait_a4": {
+            "name": "Ölporträt - Größe A4 (1 Person)",
+            "price": "80 Euro + Versand",
+            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss. Ohne Rahmen."
+        },
+        "oil_portrait_60x50": {
+            "name": "Ölporträt - Größe 60x50 cm (1 Person)",
+            "price": "120 Euro + Versand",
+            "additional": "Zusätzliche Person: + 40 Euro",
+            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss. Ohne Rahmen."
+        },
+        "oil_portrait_pet": {
+            "name": "Tierporträt in Öl - Größe A4",
+            "price": "50 Euro pro Tier + Versand",
+            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss. Ohne Rahmen."
+        },
+        "watercolor": {
+            "name": "Aquarell im Belle Époque Stil - Größe 29x42",
+            "price": "80 Euro + Versand",
+            "note": "Fertigstellung in zwei Wochen. Holzrahmen inklusive."
+        }
+    }
+}
