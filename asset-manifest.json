@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/art-portfolio/static/css/main.d5918a75.css",
-    "main.js": "/art-portfolio/static/js/main.534666b2.js",
+    "main.css": "/art-portfolio/static/css/main.1b5f18d0.css",
+    "main.js": "/art-portfolio/static/js/main.dab70181.js",
     "static/js/453.acca0757.chunk.js": "/art-portfolio/static/js/453.acca0757.chunk.js",
     "static/media/Frajola.JPEG": "/art-portfolio/static/media/Frajola.8b8494ae2bf70a5a723d.JPEG",
     "static/media/CopiaAlphonseMucha.JPEG": "/art-portfolio/static/media/CopiaAlphonseMucha.c57576bd0048a6ef750e.JPEG",
@@ -27,12 +27,12 @@
     "static/media/youtube.svg": "/art-portfolio/static/media/youtube.20e8db62d4b300e4425446c0cecde255.svg",
     "static/media/instagram.svg": "/art-portfolio/static/media/instagram.6ed2cb5264b2240800b4eca149b65721.svg",
     "index.html": "/art-portfolio/index.html",
-    "main.d5918a75.css.map": "/art-portfolio/static/css/main.d5918a75.css.map",
-    "main.534666b2.js.map": "/art-portfolio/static/js/main.534666b2.js.map",
+    "main.1b5f18d0.css.map": "/art-portfolio/static/css/main.1b5f18d0.css.map",
+    "main.dab70181.js.map": "/art-portfolio/static/js/main.dab70181.js.map",
     "453.acca0757.chunk.js.map": "/art-portfolio/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5918a75.css",
-    "static/js/main.534666b2.js"
+    "static/css/main.1b5f18d0.css",
+    "static/js/main.dab70181.js"
   ]
 }
