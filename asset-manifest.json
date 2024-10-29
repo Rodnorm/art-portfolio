@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/art-portfolio/static/css/main.1b5f18d0.css",
-    "main.js": "/art-portfolio/static/js/main.2712d526.js",
+    "main.js": "/art-portfolio/static/js/main.65c62359.js",
     "static/js/453.acca0757.chunk.js": "/art-portfolio/static/js/453.acca0757.chunk.js",
     "static/media/Frajola.JPEG": "/art-portfolio/static/media/Frajola.8b8494ae2bf70a5a723d.JPEG",
     "static/media/CopiaAlphonseMucha.JPEG": "/art-portfolio/static/media/CopiaAlphonseMucha.c57576bd0048a6ef750e.JPEG",
@@ -26,12 +26,13 @@
     "static/media/Gagarin Focus.JPEG": "/art-portfolio/static/media/Gagarin Focus.2362e1367c53e9d7d5da.JPEG",
     "index.html": "/art-portfolio/index.html",
     "static/media/instagram.svg": "/art-portfolio/static/media/instagram.6ed2cb5264b2240800b4eca149b65721.svg",
+    "static/media/tiktok.svg": "/art-portfolio/static/media/tiktok.53a365b9705f54fd8b0f7f244b3a0b4e.svg",
     "main.1b5f18d0.css.map": "/art-portfolio/static/css/main.1b5f18d0.css.map",
-    "main.2712d526.js.map": "/art-portfolio/static/js/main.2712d526.js.map",
+    "main.65c62359.js.map": "/art-portfolio/static/js/main.65c62359.js.map",
     "453.acca0757.chunk.js.map": "/art-portfolio/static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1b5f18d0.css",
-    "static/js/main.2712d526.js"
+    "static/js/main.65c62359.js"
   ]
 }
