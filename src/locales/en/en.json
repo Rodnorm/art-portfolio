@@ -45,7 +45,7 @@
         "description11": "Oil on prepared wood A4.",
         "description12": "Oil on prepared wood A4.",
         "description13": "Graphite on Canson paper A4.",
-        "description14": "Copy of a work by painter Alphonse Mucha. Made in the Belle Époque style. Watercolor and pen on Canson paper 29.7 cm x 42 cm.",
+        "description14": "Copy of a work by painter Alphonse Mucha. Made in the Art Nouveau style. Watercolor and pen on Canson paper 29.7 cm x 42 cm.",
         "description15": "Oil on canvas. 60 cm x 50 cm.",
         "description16": "Oil on canvas. 60 cm x 50 cm.",
         "description17": "Oil on canvas. 60 cm x 50 cm.",
@@ -85,9 +85,9 @@
             "note": "Takes one month to be ready due to drying time. Does not include a frame."
         },
         "watercolor": {
-            "name": "Belle Époque Style Watercolor - Size 29x42",
-            "price": "80 euros + shipping",
-            "note": "Takes two weeks to be ready. Includes wooden frame."
+            "name": "Art Nouveau Style Watercolor - Size 29x42",
+            "price": "50 euros + shipping",
+            "note": "Takes two weeks to be ready. Does not include a frame."
         }
     }
 }

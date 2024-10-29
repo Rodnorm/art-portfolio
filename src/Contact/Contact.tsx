@@ -67,21 +67,21 @@ const Contact: React.FC = () => {
 				<p>{t("contact.follow_me")}:</p>
 				<Box>
 					<a
-						href="https://www.instagram.com/seuUsuarioInstagram"
+						href="https://www.instagram.com/atelier.normando/"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="social-icon"
 					>
 						<InstagramIcon width={30} height={30} style={{ fill: "#41454e" }} />
 					</a>
-					<a
+					{/* <a
 						href="https://www.youtube.com/seuUsuarioYouTube"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="social-icon"
 					>
 						<YouTubeIcon style={{ fill: "#41454e" }} width={30} height={30} />
-					</a>
+					</a> */}
 				</Box>
 			</Box>
 		</Container>

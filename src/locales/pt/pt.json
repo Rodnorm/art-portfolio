@@ -45,7 +45,7 @@
         "description11": "Óleo sobre madeira preparada A4.",
         "description12": "Óleo sobre madeira preparada A4.",
         "description13": "Grafite sobre Papel Canson A4.",
-        "description14": "Cópia de uma obra do pintor Alphonse Mucha. Feita no estilo Belle Epoque. Aquarela e caneta sobre Papel Canson 29,7 cm x 42cm.",
+        "description14": "Cópia de uma obra do pintor Alphonse Mucha. Feita no estilo Art Nouveau. Aquarela e caneta sobre Papel Canson 29,7 cm x 42cm.",
         "description15": "Óleo sobre tela. 60cm x 50cm.",
         "description16": "Óleo sobre tela. 60cm x 50cm.",
         "description17": "Óleo sobre tela. 60cm x 50cm.",
@@ -85,9 +85,9 @@
             "note": "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura"
         },
         "watercolor": {
-            "name": "Aquarela Estilo Belle Époque - Tamanho 29x42",
-            "price": "400 reais + frete",
-            "note": "Necessita de duas semanas para ficar pronto. Inclui moldura de madeira."
+            "name": "Aquarela Estilo Art Nouveau - Tamanho 29x42",
+            "price": "300 reais + frete",
+            "note": "Necessita de duas semanas para ficar pronto. Não acompanha moldura."
         }
     }
 }

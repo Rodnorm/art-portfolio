@@ -45,7 +45,7 @@
         "description11": "Öl auf vorbereitetem Holz A4.",
         "description12": "Öl auf vorbereitetem Holz A4.",
         "description13": "Graphit auf Canson Papier A4.",
-        "description14": "Kopie eines Werks des Malers Alphonse Mucha. Im Belle Epoque Stil gefertigt. Aquarell und Stift auf Canson Papier 29,7 cm x 42 cm.",
+        "description14": "Kopie eines Werks des Malers Alphonse Mucha. Im Art Nouveau Stil gefertigt. Aquarell und Stift auf Canson Papier 29,7 cm x 42 cm.",
         "description15": "Öl auf Leinwand. 60 cm x 50 cm.",
         "description16": "Öl auf Leinwand. 60 cm x 50 cm.",
         "description17": "Öl auf Leinwand. 60 cm x 50 cm.",
@@ -85,9 +85,9 @@
             "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss. Ohne Rahmen."
         },
         "watercolor": {
-            "name": "Aquarell im Belle Époque Stil - Größe 29x42",
-            "price": "80 Euro + Versand",
-            "note": "Fertigstellung in zwei Wochen. Holzrahmen inklusive."
+            "name": "Aquarell im Art Nouveau Stil - Größe 29x42",
+            "price": "50 Euro + Versand",
+            "note": "Fertigstellung in zwei Wochen. Ohne Rahmen."
         }
     }
 }

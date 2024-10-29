@@ -12,7 +12,7 @@ const About: React.FC = () => {
 			id="about"
 			sx={{
 				position: "relative",
-				height: "100vh",
+				minHeight: "100vh",
 				display: "flex",
 				flexDirection: "column",
 				justifyContent: "center",
