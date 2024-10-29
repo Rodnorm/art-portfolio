@@ -66,28 +66,28 @@
             "name": "Retrato a lápis - Tamanho A4 (1 pessoa)",
             "price": "150 reais + frete",
             "additional": "Pessoa adicional: + 70 reais",
-            "note": "Necessita de duas semanas para ficar pronto. Não acompanha moldura."
+            "note": "Necessita de duas semanas para ficar pronto."
         },
         "oil_portrait_a4": {
             "name": "Retrato a óleo - Tamanho A4 (1 pessoa)",
             "price": "400 reais + frete",
-            "note": "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura."
+            "note": "Necessita de um mês para ficar pronto devido à secagem."
         },
         "oil_portrait_60x50": {
             "name": "Retrato a óleo - Tamanho 60x50 cm (1 pessoa)",
             "price": "600 reais + frete",
             "additional": "Pessoa adicional: + 200 reais",
-            "note": "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura."
+            "note": "Necessita de um mês para ficar pronto devido à secagem."
         },
         "oil_portrait_pet": {
             "name": "Retrato a óleo de animais - Tamanho A4",
             "price": "260 reais por animal + frete",
-            "note": "Necessita de um mês para ficar pronto devido à secagem. Não acompanha moldura"
+            "note": "Necessita de um mês para ficar pronto devido à secagem."
         },
         "watercolor": {
             "name": "Aquarela Estilo Art Nouveau - Tamanho 29x42",
             "price": "300 reais + frete",
-            "note": "Necessita de duas semanas para ficar pronto. Não acompanha moldura."
+            "note": "Necessita de duas semanas para ficar pronto."
         }
     }
 }

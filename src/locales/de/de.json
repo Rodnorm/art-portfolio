@@ -66,28 +66,28 @@
             "name": "Bleistiftporträt - Größe A4 (1 Person)",
             "price": "30 Euro + Versand",
             "additional": "Zusätzliche Person: + 15 Euro",
-            "note": "Fertigstellung in zwei Wochen. Ohne Rahmen."
+            "note": "Fertigstellung in zwei Wochen."
         },
         "oil_portrait_a4": {
             "name": "Ölporträt - Größe A4 (1 Person)",
             "price": "80 Euro + Versand",
-            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss. Ohne Rahmen."
+            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss."
         },
         "oil_portrait_60x50": {
             "name": "Ölporträt - Größe 60x50 cm (1 Person)",
             "price": "120 Euro + Versand",
             "additional": "Zusätzliche Person: + 40 Euro",
-            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss. Ohne Rahmen."
+            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss."
         },
         "oil_portrait_pet": {
             "name": "Tierporträt in Öl - Größe A4",
             "price": "50 Euro pro Tier + Versand",
-            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss. Ohne Rahmen."
+            "note": "Fertigstellung in einem Monat, da die Farbe trocknen muss."
         },
         "watercolor": {
             "name": "Aquarell im Art Nouveau Stil - Größe 29x42",
             "price": "50 Euro + Versand",
-            "note": "Fertigstellung in zwei Wochen. Ohne Rahmen."
+            "note": "Fertigstellung in zwei Wochen."
         }
     }
 }

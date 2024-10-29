@@ -1,12 +1,15 @@
 import "./Contact.css";
 import React, { useState } from "react";
 import { ReactComponent as InstagramIcon } from "../assets/icons/instagram.svg";
-import { ReactComponent as YouTubeIcon } from "../assets/icons/youtube.svg";
+import { ReactComponent as TikTokIcon } from "../assets/icons/tiktok.svg";
 import { Box, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const Contact: React.FC = () => {
 	const { t } = useTranslation();
+	const tiktokUrl = "https://www.tiktok.com/@atelier.normando";
+	const instagramkUrl = "https://www.instagram.com/atelier.normando/";
+
 	const [formData, setFormData] = useState({
 		name: "",
 		message: "",
@@ -67,21 +70,21 @@ const Contact: React.FC = () => {
 				<p>{t("contact.follow_me")}:</p>
 				<Box>
 					<a
-						href="https://www.instagram.com/atelier.normando/"
+						href={instagramkUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="social-icon"
 					>
 						<InstagramIcon width={30} height={30} style={{ fill: "#41454e" }} />
 					</a>
-					{/* <a
-						href="https://www.youtube.com/seuUsuarioYouTube"
+					<a
+						href={tiktokUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="social-icon"
 					>
-						<YouTubeIcon style={{ fill: "#41454e" }} width={30} height={30} />
-					</a> */}
+						<TikTokIcon style={{ fill: "#41454e" }} width={30} height={30} />
+					</a>
 				</Box>
 			</Box>
 		</Container>
