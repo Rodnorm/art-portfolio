@@ -79,6 +79,14 @@ const Trabalhos: React.FC = () => {
 			url: require("../assets/img/MulherComFlor.JPEG"),
 			description: t("work.description18"),
 		},
+		{
+			url: require("../assets/img/Baby.JPEG"),
+			description: t("work.description19"),
+		},
+		{
+			url: require("../assets/img/MestreJoao.JPEG"),
+			description: t("work.description20"),
+		},
 	];
 
 	return (
