@@ -1,4 +1,3 @@
-/* Estilos para o card de imagem */
 .image-grid {
   display: flex;
   gap: 10px;
@@ -11,6 +10,8 @@
   height: 150px;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 10px;
+  background-color: #e0e0e0;
 }
 
 .thumbnail {
@@ -18,9 +19,15 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Estilos para o modal */
+.thumbnail.loaded {
+  opacity: 1;
+}
+
+/* Modal */
 .modal {
   display: flex;
   align-items: center;
@@ -31,7 +38,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 2000;
   overflow: hidden;
 }
@@ -41,17 +48,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
-/* Estilo da imagem ampliada */
 .full-image {
-  max-width: 80vw; /* Limita a largura da imagem */
-  max-height: 80vh; /* Limita a altura da imagem */
+  max-width: 80vw;
+  max-height: 80vh;
   border-radius: 10px;
   z-index: 10;
 }
 
-/* Botão de fechar */
 .close {
   position: absolute;
   top: 20px;
@@ -60,10 +66,13 @@
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 100;
 }
 
-/* Botões de navegação fixos */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: fixed;
   top: 50%;
@@ -73,14 +82,15 @@
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   transform: translateY(-50%);
+  z-index: 100;
 }
 
 .prev {
-  left: 20px; /* Ajuste a posição esquerda */
+  left: 20px;
 }
 
 .next {
-  right: 20px; /* Ajuste a posição direita */
+  right: 20px;
 }
 
 .prev:hover,
@@ -88,11 +98,31 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Descrição da imagem */
 .image-description {
   margin-top: 10px;
   color: white;
   font-size: 16px;
   text-align: center;
   max-width: 80vw;
+}
+
+@media (max-width: 600px) {
+  .image-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .prev,
+  .next {
+    font-size: 30px;
+    padding: 5px;
+  }
+
+  .prev {
+    left: 5px;
+  }
+
+  .next {
+    right: 5px;
+  }
 }

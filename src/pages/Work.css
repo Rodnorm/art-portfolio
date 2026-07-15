@@ -1,0 +1,15 @@
+#trabalhos {
+  max-width: 100vw;
+  margin: unset;
+  margin-bottom: 3rem;
+  min-height: 100vh;
+}
+
+#trabalhos .title {
+  color: black;
+  text-shadow: none;
+  display: flex;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
