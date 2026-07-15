@@ -1,0 +1,107 @@
+[
+  {
+    "id": "buarque",
+    "filename": "Buarque.JPEG",
+    "descriptionKey": "work.description1"
+  },
+  {
+    "id": "dicaprio",
+    "filename": "DiCaprio.JPEG",
+    "descriptionKey": "work.description2"
+  },
+  {
+    "id": "crews",
+    "filename": "Crews.JPEG",
+    "descriptionKey": "work.description3"
+  },
+  {
+    "id": "estudo_tonal",
+    "filename": "Estudo_tonal.JPEG",
+    "descriptionKey": "work.description4"
+  },
+  {
+    "id": "gagarin",
+    "filename": "Gagarin.JPEG",
+    "descriptionKey": "work.description5"
+  },
+  {
+    "id": "homem_cigarro",
+    "filename": "Homem_com_cigarro.JPEG",
+    "descriptionKey": "work.description6"
+  },
+  {
+    "id": "homem_pano",
+    "filename": "Homem_com_pano.JPEG",
+    "descriptionKey": "work.description7"
+  },
+  {
+    "id": "matogrosso",
+    "filename": "Matogrosso.JPEG",
+    "descriptionKey": "work.description8"
+  },
+  {
+    "id": "mulher_sorriso",
+    "filename": "Mulher_com_sorriso.JPEG",
+    "descriptionKey": "work.description9"
+  },
+  {
+    "id": "vila",
+    "filename": "Vila.JPEG",
+    "descriptionKey": "work.description10"
+  },
+  {
+    "id": "gata_lily",
+    "filename": "Gata_Lily.JPEG",
+    "descriptionKey": "work.description11"
+  },
+  {
+    "id": "frajola",
+    "filename": "Frajola.JPEG",
+    "descriptionKey": "work.description12"
+  },
+  {
+    "id": "garoto_bebendo",
+    "filename": "Garoto_bebendo.JPEG",
+    "descriptionKey": "work.description13"
+  },
+  {
+    "id": "alphonse_mucha",
+    "filename": "CopiaAlphonseMucha.JPEG",
+    "descriptionKey": "work.description14"
+  },
+  {
+    "id": "mulher_cacheado",
+    "filename": "MulherComCabeloCacheadoPintura.JPEG",
+    "descriptionKey": "work.description15"
+  },
+  {
+    "id": "terry_crews",
+    "filename": "TerryCrewsPintura.JPEG",
+    "descriptionKey": "work.description16"
+  },
+  {
+    "id": "leonardo_dicaprio",
+    "filename": "LeonardoDiCaprioPintura.JPEG",
+    "descriptionKey": "work.description17"
+  },
+  {
+    "id": "mulher_flor",
+    "filename": "MulherComFlor.JPEG",
+    "descriptionKey": "work.description18"
+  },
+  {
+    "id": "baby",
+    "filename": "Baby.JPEG",
+    "descriptionKey": "work.description19"
+  },
+  {
+    "id": "mestre_joao",
+    "filename": "MestreJoao.JPEG",
+    "descriptionKey": "work.description20"
+  },
+  {
+    "id": "baby1",
+    "filename": "Baby1.JPEG",
+    "descriptionKey": "work.description21"
+  }
+]
