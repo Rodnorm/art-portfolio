@@ -17,7 +17,6 @@ import {
   ChevronRight as ChevronRightIcon,
 } from '@mui/icons-material'
 import { FaTiktok } from 'react-icons/fa'
-import textureImage from '../../assets/img/textura.jpg?url'
 import type { NavLink } from '../../types'
 
 const drawerWidth = 240
@@ -80,7 +79,7 @@ export default function Navbar() {
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
-            backgroundImage: `url(${textureImage})`,
+            backgroundImage: 'url(/textura.jpg)',
             backgroundPosition: 'center',
             color: 'white',
           },

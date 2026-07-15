@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import { Box, Typography } from '@mui/material'
-import profilePic from '../assets/img/Perfil.JPEG?url'
-import signature from '../assets/img/assinatura.JPEG?url'
 import './About.css'
 
 export default function About() {
@@ -20,7 +18,7 @@ export default function About() {
         alignItems: 'center',
         color: 'white',
         textAlign: 'center',
-        backgroundImage: `url(${signature})`,
+        backgroundImage: 'url(/assinatura.JPEG)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -28,7 +26,7 @@ export default function About() {
     >
       <Box
         component="img"
-        src={profilePic}
+        src="/Perfil.JPEG"
         alt="Rodrigo Normando"
         sx={{
           width: '300px',

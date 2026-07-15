@@ -5,9 +5,9 @@ declare module '*.css' {
   export default content
 }
 
-declare module '*.svg?react' {
-  const component: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
-  export default component
+declare module '*.svg?url' {
+  const content: string
+  export default content
 }
 
 declare module '*.jpeg?url' {

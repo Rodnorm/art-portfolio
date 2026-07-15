@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Container, Typography } from '@mui/material'
-import InstagramIcon from '../assets/icons/instagram.svg?react'
-import TikTokIcon from '../assets/icons/tiktok.svg?react'
+import InstagramIcon from '../assets/icons/instagram.svg?url'
+import TikTokIcon from '../assets/icons/tiktok.svg?url'
 import './Contact.css'
 
 const PHONE_NUMBER = '491795204649'
@@ -79,7 +79,7 @@ export default function Contact() {
             className="social-icon"
             aria-label="Instagram"
           >
-            <InstagramIcon width={30} height={30} style={{ fill: '#41454e' }} />
+            <img src={InstagramIcon} alt="Instagram" width={30} height={30} />
           </a>
 
           <a
@@ -89,7 +89,7 @@ export default function Contact() {
             className="social-icon"
             aria-label="TikTok"
           >
-            <TikTokIcon style={{ fill: '#41454e' }} width={30} height={30} />
+            <img src={TikTokIcon} alt="TikTok" width={30} height={30} />
           </a>
         </Box>
       </Box>
