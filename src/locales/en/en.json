@@ -8,7 +8,12 @@
         "prices": "Prices",
         "en": "In English",
         "de": "Auf Deutsch",
-        "pt": "Em Português"
+        "pt": "Em Português",
+        "menu_aria": "Open navigation menu",
+        "close_menu": "Close menu",
+        "navigation_menu": "Navigation menu",
+        "main_navigation": "Main navigation",
+        "language": "Language"
     },
     "about": {
         "experience": "I am an artist with years of experience in drawing with pencil, charcoal, and pens, as well as painting in oil and watercolor. I enjoy creating portraits of people and animals, but I also work with landscapes. My passion for art motivates me to explore different techniques and styles, always seeking to capture the beauty of the world around me. Currently, I reside and work in the city of Essen in Germany."

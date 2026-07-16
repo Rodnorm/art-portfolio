@@ -6,8 +6,14 @@ export default function Footer() {
   const { t } = useTranslation()
 
   return (
-    <Box component="footer" className="footer" id="footer">
-      <Typography>
+    <Box
+      component="footer"
+      className="footer"
+      id="footer"
+      role="contentinfo"
+      aria-label="Footer"
+    >
+      <Typography component="p">
         © {new Date().getFullYear()} {t('footer.footer_rights')}
       </Typography>
     </Box>

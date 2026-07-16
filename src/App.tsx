@@ -23,6 +23,11 @@ function App() {
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
+        {/* Skip link for keyboard navigation */}
+        <a href="#trabalhos" className="skip-link">
+          Skip to main content
+        </a>
+
         <Box className="App">
           <Navbar />
           <Box className="content">

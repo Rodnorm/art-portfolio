@@ -8,7 +8,12 @@
         "prices": "Preços",
         "en": "In English",
         "de": "Auf Deutsch",
-        "pt": "Em Português"
+        "pt": "Em Português",
+        "menu_aria": "Abrir menu de navegação",
+        "close_menu": "Fechar menu",
+        "navigation_menu": "Menu de navegação",
+        "main_navigation": "Navegação principal",
+        "language": "Idioma"
     },
     "about": {
         "experience": "Sou um artista com anos de experiência em desenho a lápis, carvão e canetas, além de pintar em óleo e aquarela. Gosto de fazer retratos de pessoas e animais, mas também trabalho com paisagens. Minha paixão pela arte me motiva a explorar diferentes técnicas e estilos, sempre buscando capturar a beleza do mundo ao meu redor. Atualmente resido e trabalho na cidade de Essen na Alemanha."

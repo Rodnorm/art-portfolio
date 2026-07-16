@@ -74,7 +74,7 @@
   position: absolute;
   top: 20px;
   right: 30px;
-  color: white;
+  color: #ffffff;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
@@ -88,7 +88,7 @@
   cursor: pointer;
   position: fixed;
   top: 50%;
-  color: white;
+  color: #ffffff;
   font-size: 40px;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -106,13 +106,23 @@
 }
 
 .prev:hover,
-.next:hover {
+.next:hover,
+.prev:focus,
+.next:focus {
   background-color: rgba(0, 0, 0, 0.8);
+  outline: 2px solid #4a90d9;
+  outline-offset: 2px;
+}
+
+.close:hover,
+.close:focus {
+  outline: 2px solid #4a90d9;
+  outline-offset: 2px;
 }
 
 .imageDescription {
   margin-top: 10px;
-  color: white;
+  color: #ffffff;
   font-size: 16px;
   text-align: center;
   max-width: 80vw;
@@ -136,5 +146,12 @@
 
   .next {
     right: 5px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .thumbnail {
+    transition: none;
   }
 }
