@@ -114,7 +114,7 @@ export default function Navbar() {
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
-            backgroundImage: 'url(./textura.jpg)',
+            backgroundImage: 'url(/textura.jpg)',
             backgroundPosition: 'center',
             color: '#ffffff',
           },
