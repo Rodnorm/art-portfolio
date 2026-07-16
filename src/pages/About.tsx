@@ -18,7 +18,7 @@ export default function About() {
         alignItems: 'center',
         color: 'white',
         textAlign: 'center',
-        backgroundImage: 'url(/assinatura.JPEG)',
+        backgroundImage: 'url(./assinatura.JPEG)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -26,7 +26,7 @@ export default function About() {
     >
       <Box
         component="img"
-        src="/Perfil.JPEG"
+        src="./Perfil.JPEG"
         alt="Rodrigo Normando"
         sx={{
           width: '300px',
