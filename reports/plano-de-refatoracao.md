@@ -220,7 +220,7 @@ Semana 4: Polish
 | Risco | Probabilidade | Mitigação |
 |-------|---------------|-----------|
 | Breaking changes na migração | Média | Backup do projeto, testes incrementais |
-| Imagens quebradas após refatoração | Alta | Usar caminhos relativos, validar paths |
+| Imagens quebradas após reformulação | Alta | Usar caminhos relativos, validar paths |
 | Regressão de estilos | Média |Snapshot tests, Chromatic |
 | Tempo de desenvolvimento | Alta | Dividir em fases menores |
 

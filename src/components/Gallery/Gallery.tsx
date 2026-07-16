@@ -1,15 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box } from '@mui/material'
+import { Box, Skeleton } from '@mui/material'
 import type { Artwork, ImageData } from '../../types'
-import './Gallery.css'
+import { useImages, useImagePreloader } from '../../hooks/useImages'
+import styles from './Gallery.module.css'
 
 interface GalleryProps {
   artworks: Artwork[]
-}
-
-function importImage(filename: string): string {
-  return new URL(`../../assets/img/${filename}?url`, import.meta.url).href
 }
 
 export default function Gallery({ artworks }: GalleryProps) {
@@ -17,10 +14,17 @@ export default function Gallery({ artworks }: GalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
 
-  const images: ImageData[] = artworks.map((artwork) => ({
-    url: importImage(artwork.filename),
-    description: t(artwork.descriptionKey),
+  const { images: cachedImages, isLoading } = useImages({ artworks })
+
+  // Translate descriptions after images are loaded
+  const images: ImageData[] = cachedImages.map((img, index) => ({
+    url: img.url,
+    description: t(artworks[index].descriptionKey),
   }))
+
+  // Preload all images in background
+  const imageUrls = cachedImages.map((img) => img.url)
+  useImagePreloader(imageUrls)
 
   const openModal = (index: number) => {
     setSelectedIndex(index)
@@ -61,37 +65,50 @@ export default function Gallery({ artworks }: GalleryProps) {
     setLoadedImages((prev) => new Set(prev).add(id))
   }
 
+  // Generate skeleton placeholders
+  const skeletonCount = Math.min(artworks.length, 8)
+
   return (
-    <Box className="gallery">
-      <Box className="image-grid">
-        {artworks.map((artwork, index) => (
-          <Box
-            key={artwork.id}
-            className="image-card"
-            onClick={() => openModal(index)}
-          >
-            <img
-              src={images[index].url}
-              alt={`${t('work.label')} ${index + 1}`}
-              className={`thumbnail ${loadedImages.has(artwork.id) ? 'loaded' : ''}`}
-              loading="lazy"
-              onLoad={() => handleImageLoad(artwork.id)}
-            />
-          </Box>
-        ))}
+    <Box className={styles.gallery}>
+      <Box className={styles.imageGrid}>
+        {isLoading
+          ? Array.from({ length: skeletonCount }).map((_, index) => (
+              <Box key={`skeleton-${index}`} className={styles.imageCard}>
+                <Skeleton
+                  variant="rectangular"
+                  animation="wave"
+                  className={styles.skeleton}
+                />
+              </Box>
+            ))
+          : artworks.map((artwork, index) => (
+              <Box
+                key={artwork.id}
+                className={styles.imageCard}
+                onClick={() => openModal(index)}
+              >
+                <img
+                  src={images[index]?.url}
+                  alt={`${t('work.label')} ${index + 1}`}
+                  className={`${styles.thumbnail} ${loadedImages.has(artwork.id) ? styles.thumbnailLoaded : ''}`}
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(artwork.id)}
+                />
+              </Box>
+            ))}
       </Box>
 
       {selectedIndex !== null && (
         <Box
-          className="modal"
+          className={styles.modal}
           onClick={closeModal}
           role="dialog"
           aria-modal="true"
           aria-label="Image viewer"
         >
-          <Box className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <Box className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <button
-              className="close"
+              className={styles.close}
               onClick={closeModal}
               aria-label={t('carousel.close')}
             >
@@ -99,13 +116,13 @@ export default function Gallery({ artworks }: GalleryProps) {
             </button>
 
             <img
-              src={images[selectedIndex].url}
-              alt={images[selectedIndex].description}
-              className="full-image"
+              src={images[selectedIndex]?.url}
+              alt={images[selectedIndex]?.description}
+              className={styles.fullImage}
             />
 
             <button
-              className="prev"
+              className={styles.prev}
               onClick={() =>
                 setSelectedIndex(
                   (selectedIndex - 1 + images.length) % images.length
@@ -117,7 +134,7 @@ export default function Gallery({ artworks }: GalleryProps) {
             </button>
 
             <button
-              className="next"
+              className={styles.next}
               onClick={() =>
                 setSelectedIndex((selectedIndex + 1) % images.length)
               }
@@ -126,8 +143,8 @@ export default function Gallery({ artworks }: GalleryProps) {
               &#10095;
             </button>
 
-            <Box className="image-description">
-              <p>{images[selectedIndex].description}</p>
+            <Box className={styles.imageDescription}>
+              <p>{images[selectedIndex]?.description}</p>
             </Box>
           </Box>
         </Box>

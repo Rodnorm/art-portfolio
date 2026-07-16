@@ -1,4 +1,6 @@
 import { Box } from '@mui/material'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home'
 import Work from './pages/Work'
@@ -8,19 +10,37 @@ import Contact from './pages/Contact'
 import Footer from './components/Footer/Footer'
 import './App.css'
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+})
+
 function App() {
   return (
-    <Box className="App">
-      <Navbar />
-      <Box className="content">
-        <Home />
-        <Work />
-        <About />
-        <Prices />
-        <Contact />
-        <Footer />
-      </Box>
-    </Box>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        {/* Skip link for keyboard navigation */}
+        <a href="#trabalhos" className="skip-link">
+          Skip to main content
+        </a>
+
+        <Box className="App">
+          <Navbar />
+          <Box className="content">
+            <Home />
+            <Work />
+            <About />
+            <Prices />
+            <Contact />
+            <Footer />
+          </Box>
+        </Box>
+      </QueryClientProvider>
+    </HelmetProvider>
   )
 }
 
