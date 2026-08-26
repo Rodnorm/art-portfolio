@@ -964,7 +964,7 @@ Atualizar esta tabela somente após validação e deploy real. Todas as etapas c
 
 | Etapa | Status | Branch/commit | Deploy | Aprovada |
 | --- | --- | --- | --- | --- |
-| Etapa 0 — Build, assets e deploy | Pendente | — | — | Não |
+| Etapa 0 — Build, assets e deploy | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `ffdeb6b` | Dispensado pelo usuário; validação local | Não |
 | Etapa 1 — Tokens, paleta e tipografia | Pendente | — | — | Não |
 | Etapa 2 — Header e navegação | Pendente | — | — | Não |
 | Etapa 3 — Hero | Pendente | — | — | Não |
