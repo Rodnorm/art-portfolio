@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import { Box, Container, Typography } from '@mui/material'
 import SEO from '../components/SEO/SEO'
 import type { PriceItem } from '../types'
-import './Prices.css'
+import styles from './Prices.module.css'
 
 const priceKeys = [
   'pencil_portrait',
@@ -13,12 +12,14 @@ const priceKeys = [
 ] as const
 
 export default function Prices() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const priceList: PriceItem[] = priceKeys.map((key) => ({
     name: t(`prices.${key}.name`),
     price: t(`prices.${key}.price`),
-    additional: t(`prices.${key}.additional`),
+    additional: i18n.exists(`prices.${key}.additional`)
+      ? t(`prices.${key}.additional`)
+      : undefined,
     note: t(`prices.${key}.note`),
   }))
 
@@ -28,28 +29,39 @@ export default function Prices() {
         title={t('prices.prices')}
         description="Preços para pinturas e desenhos personalizados - Retratos a lápis, óleo, aquarela e muito mais."
       />
-      <Container component="section" className="prices-section" id="precos">
-        <h2 className="prices-title">{t('prices.prices')}</h2>
+      <section className={styles.section} id="precos">
+        <div className={styles.content}>
+          <h2 className={styles.title}>{t('prices.prices')}</h2>
 
-        <Box className="prices-list">
-          {priceList.map((item, index) => (
-            <Box className="price-item" key={index}>
-              <Typography component="h3" variant="h6">
-                {item.name}
-              </Typography>
-              <Typography>
-                {t('prices.price')}: {item.price}
-              </Typography>
-              {item.additional && <Typography>{item.additional}</Typography>}
-              {item.note && (
-                <Typography>
-                  <strong>{t('prices.note')}:</strong> {item.note}
-                </Typography>
-              )}
-            </Box>
-          ))}
-        </Box>
-      </Container>
+          <ol className={styles.list}>
+            {priceList.map((item, index) => (
+              <li className={styles.item} key={priceKeys[index]}>
+                <span className={styles.number} aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div className={styles.itemContent}>
+                  <h3 className={styles.itemTitle}>{item.name}</h3>
+                  <div className={styles.details}>
+                    <p className={styles.detailRow}>
+                      <strong>{t('prices.price')}</strong>
+                      <span>{item.price}</span>
+                    </p>
+                    {item.additional && (
+                      <p className={styles.additional}>{item.additional}</p>
+                    )}
+                    {item.note && (
+                      <p className={styles.detailRow}>
+                        <strong>{t('prices.note')}</strong>
+                        <span>{item.note}</span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
     </>
   )
 }
