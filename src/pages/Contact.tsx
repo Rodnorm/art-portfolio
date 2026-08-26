@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import InstagramIcon from '../assets/icons/instagram.svg?url'
 import TikTokIcon from '../assets/icons/tiktok.svg?url'
-import SEO from '../components/SEO/SEO'
 import styles from './Contact.module.css'
 
 const PHONE_NUMBER = '491795204649'
@@ -35,12 +34,7 @@ export default function Contact() {
   }
 
   return (
-    <>
-      <SEO
-        title={t('nav.contact')}
-        description="Entre em contato com Rodrigo Normando para solicitar orçamentos e pedidos personalizados de arte."
-      />
-      <section className={styles.section} id="contato">
+    <section className={styles.section} id="contato">
         <div className={styles.layout}>
           <div className={styles.headingGroup}>
             <h2 className={styles.title}>{t('contact.get_in_touch')}</h2>
@@ -101,7 +95,6 @@ export default function Contact() {
             </button>
           </form>
         </div>
-      </section>
-    </>
+    </section>
   )
 }

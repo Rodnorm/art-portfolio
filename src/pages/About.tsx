@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import SEO from '../components/SEO/SEO'
 import portraitUrl from '../assets/img/Perfil.JPEG?url'
 import signatureUrl from '../assets/img/assinatura.JPEG?url'
 import portrait640 from '../assets/generated/portrait-640.webp?url'
@@ -12,12 +11,7 @@ export default function About() {
   const { t } = useTranslation()
 
   return (
-    <>
-      <SEO
-        title={t('nav.about')}
-        description="Sobre Rodrigo Normando - Artista tradicional especializado em desenhos a lápis, carvão e pinturas a óleo."
-      />
-      <section id="about" className={styles.section}>
+    <section id="about" className={styles.section}>
         <div className={styles.layout}>
           <div className={styles.media}>
             <picture className={styles.portraitPicture}>
@@ -59,7 +53,6 @@ export default function About() {
             <p className={styles.biography}>{t('about.experience')}</p>
           </div>
         </div>
-      </section>
-    </>
+    </section>
   )
 }

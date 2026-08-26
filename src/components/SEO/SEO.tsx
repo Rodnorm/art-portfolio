@@ -9,8 +9,8 @@ interface SEOProps {
 }
 
 const SITE_NAME = 'Rodrigo Normando Art'
-const SITE_URL = 'https://rodnorm.github.io/art-portfolio'
-const DEFAULT_IMAGE = '/og-image.png'
+const SITE_URL = 'https://rodnorm.github.io/art-portfolio/'
+const DEFAULT_IMAGE = 'Gagarin-Focus.JPEG'
 
 export default function SEO({
   title,
@@ -20,6 +20,8 @@ export default function SEO({
   type = 'website',
 }: SEOProps) {
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`
+  const canonicalUrl = url ? new URL(url, SITE_URL).href : SITE_URL
+  const imageUrl = new URL(image ?? DEFAULT_IMAGE, SITE_URL).href
 
   return (
     <Helmet>
@@ -33,23 +35,17 @@ export default function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE_NAME} />
-      {url && <meta property="og:url" content={url} />}
-      <meta
-        property="og:image"
-        content={image ? `${SITE_URL}${image}` : `${SITE_URL}${DEFAULT_IMAGE}`}
-      />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={imageUrl} />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta
-        name="twitter:image"
-        content={image ? `${SITE_URL}${image}` : `${SITE_URL}${DEFAULT_IMAGE}`}
-      />
+      <meta name="twitter:image" content={imageUrl} />
 
       {/* Canonical URL */}
-      {url && <link rel="canonical" href={url} />}
+      <link rel="canonical" href={canonicalUrl} />
     </Helmet>
   )
 }

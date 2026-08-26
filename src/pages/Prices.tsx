@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import SEO from '../components/SEO/SEO'
 import type { PriceItem } from '../types'
 import styles from './Prices.module.css'
 
@@ -24,12 +23,7 @@ export default function Prices() {
   }))
 
   return (
-    <>
-      <SEO
-        title={t('prices.prices')}
-        description="Preços para pinturas e desenhos personalizados - Retratos a lápis, óleo, aquarela e muito mais."
-      />
-      <section className={styles.section} id="precos">
+    <section className={styles.section} id="precos">
         <div className={styles.content}>
           <h2 className={styles.title}>{t('prices.prices')}</h2>
 
@@ -61,7 +55,6 @@ export default function Prices() {
             ))}
           </ol>
         </div>
-      </section>
-    </>
+    </section>
   )
 }
