@@ -89,22 +89,44 @@
   outline: none;
 }
 
-.fullImage {
+.imageStage {
   z-index: 10;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+}
+
+.fullImage {
   display: block;
   width: auto;
   max-width: 100%;
   height: auto;
   max-height: 72svh;
   border-radius: var(--radius-image);
+  opacity: 0;
   object-fit: contain;
 }
 
+.fullImageLoaded {
+  opacity: 1;
+}
+
 .fullPicture {
-  z-index: 10;
+  grid-area: 1 / 1;
   display: grid;
   place-items: center;
   max-width: 100%;
+}
+
+.modalLoading {
+  z-index: 1;
+  grid-area: 1 / 1;
+  color: var(--color-on-dark);
+}
+
+.controlIcon {
+  display: block;
+  pointer-events: none;
 }
 
 .close {

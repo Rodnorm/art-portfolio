@@ -1,6 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box, Skeleton } from '@mui/material'
+import { Box, CircularProgress, Skeleton } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import type { Artwork, ImageData } from '../../types'
 import { useImages } from '../../hooks/useImages'
 import styles from './Gallery.module.css'
@@ -13,9 +16,12 @@ export default function Gallery({ artworks }: GalleryProps) {
   const { t } = useTranslation()
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
+  const [isModalImageLoading, setIsModalImageLoading] = useState(false)
   const dialogRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null)
+  const selectedIndexRef = useRef<number | null>(null)
+  const adjacentPreloadersRef = useRef<Map<string, HTMLImageElement>>(new Map())
 
   const { images: cachedImages, isLoading } = useImages({ artworks })
 
@@ -31,6 +37,7 @@ export default function Gallery({ artworks }: GalleryProps) {
 
   const openModal = (index: number, trigger: HTMLButtonElement) => {
     lastTriggerRef.current = trigger
+    setIsModalImageLoading(true)
     setSelectedIndex(index)
   }
 
@@ -38,16 +45,25 @@ export default function Gallery({ artworks }: GalleryProps) {
     setSelectedIndex(null)
   }, [])
 
+  const navigateImage = useCallback(
+    (direction: -1 | 1) => {
+      setIsModalImageLoading(true)
+      setSelectedIndex((currentIndex) => {
+        if (currentIndex === null || images.length === 0) return currentIndex
+        return (currentIndex + direction + images.length) % images.length
+      })
+    },
+    [images.length]
+  )
+
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (selectedIndex === null) return
 
       if (event.key === 'ArrowRight') {
-        setSelectedIndex((prevIndex) => (prevIndex! + 1) % images.length)
+        navigateImage(1)
       } else if (event.key === 'ArrowLeft') {
-        setSelectedIndex(
-          (prevIndex) => (prevIndex! - 1 + images.length) % images.length
-        )
+        navigateImage(-1)
       } else if (event.key === 'Escape') {
         closeModal()
       } else if (event.key === 'Tab') {
@@ -69,8 +85,24 @@ export default function Gallery({ artworks }: GalleryProps) {
         }
       }
     },
-    [selectedIndex, images.length, closeModal]
+    [selectedIndex, closeModal, navigateImage]
   )
+
+  selectedIndexRef.current = selectedIndex
+
+  const handleModalImageLoad = useCallback((imageIndex: number) => {
+    if (selectedIndexRef.current === imageIndex) {
+      setIsModalImageLoading(false)
+    }
+  }, [])
+
+  const handleModalContentClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation()
+
+    if (event.target === event.currentTarget) {
+      closeModal()
+    }
+  }
 
   useEffect(() => {
     if (selectedIndex !== null) {
@@ -96,6 +128,31 @@ export default function Gallery({ artworks }: GalleryProps) {
       lastTriggerRef.current?.focus()
     }
   }, [isModalOpen])
+
+  useEffect(() => {
+    if (selectedIndex === null || images.length < 2) return
+
+    const adjacentIndexes = [
+      (selectedIndex - 1 + images.length) % images.length,
+      (selectedIndex + 1) % images.length,
+    ]
+
+    adjacentIndexes.forEach((index) => {
+      const imageUrl = images[index]?.fullUrl
+      if (!imageUrl || adjacentPreloadersRef.current.has(imageUrl)) return
+
+      const preloader = new Image()
+      preloader.src = imageUrl
+      adjacentPreloadersRef.current.set(imageUrl, preloader)
+    })
+  }, [selectedIndex, images])
+
+  useEffect(
+    () => () => {
+      adjacentPreloadersRef.current.clear()
+    },
+    []
+  )
 
   const handleImageLoad = (id: string) => {
     setLoadedImages((prev) => new Set(prev).add(id))
@@ -165,9 +222,10 @@ export default function Gallery({ artworks }: GalleryProps) {
           <Box
             ref={dialogRef}
             className={styles.modalContent}
-            onClick={(event) => event.stopPropagation()}
+            onClick={handleModalContentClick}
             role="dialog"
             aria-modal="true"
+            aria-busy={isModalImageLoading}
             aria-labelledby="gallery-dialog-title"
             aria-describedby="gallery-dialog-description"
           >
@@ -179,44 +237,67 @@ export default function Gallery({ artworks }: GalleryProps) {
               type="button"
               className={styles.close}
               onClick={closeModal}
-              aria-label={t('carousel.close')}
+            aria-label={t('carousel.close')}
             >
-              &times;
+              <CloseIcon
+                className={styles.controlIcon}
+                fontSize="inherit"
+                aria-hidden="true"
+              />
             </button>
 
-            <picture className={styles.fullPicture}>
-              <source type="image/webp" srcSet={images[selectedIndex]?.fullUrl} />
-              <img
-                src={images[selectedIndex]?.url}
-                alt={images[selectedIndex]?.description}
-                width={images[selectedIndex]?.width}
-                height={images[selectedIndex]?.height}
-                className={styles.fullImage}
-              />
-            </picture>
+            <Box className={styles.imageStage}>
+              <picture
+                className={styles.fullPicture}
+                key={images[selectedIndex]?.fullUrl}
+              >
+                <source
+                  type="image/webp"
+                  srcSet={images[selectedIndex]?.fullUrl}
+                />
+                <img
+                  src={images[selectedIndex]?.url}
+                  alt={images[selectedIndex]?.description}
+                  width={images[selectedIndex]?.width}
+                  height={images[selectedIndex]?.height}
+                  className={`${styles.fullImage} ${isModalImageLoading ? '' : styles.fullImageLoaded}`}
+                  onLoad={() => handleModalImageLoad(selectedIndex)}
+                  onError={() => handleModalImageLoad(selectedIndex)}
+                />
+              </picture>
+              {isModalImageLoading && (
+                <CircularProgress
+                  className={styles.modalLoading}
+                  color="inherit"
+                  aria-hidden="true"
+                />
+              )}
+            </Box>
 
             <button
               type="button"
               className={styles.prev}
-              onClick={() =>
-                setSelectedIndex(
-                  (selectedIndex - 1 + images.length) % images.length
-                )
-              }
+              onClick={() => navigateImage(-1)}
               aria-label={t('carousel.previous')}
             >
-              &#10094;
+              <ChevronLeftIcon
+                className={styles.controlIcon}
+                fontSize="inherit"
+                aria-hidden="true"
+              />
             </button>
 
             <button
               type="button"
               className={styles.next}
-              onClick={() =>
-                setSelectedIndex((selectedIndex + 1) % images.length)
-              }
+              onClick={() => navigateImage(1)}
               aria-label={t('carousel.next')}
             >
-              &#10095;
+              <ChevronRightIcon
+                className={styles.controlIcon}
+                fontSize="inherit"
+                aria-hidden="true"
+              />
             </button>
 
             <Box id="gallery-dialog-description" className={styles.imageDescription}>
