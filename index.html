@@ -8,6 +8,19 @@
     <meta name="theme-color" content="#f2ebdd" />
     <meta name="description" content="Rodrigo Normando - Arte Tradicional. Retratos a lápis, carvão, óleo e aquarela." />
     <title>Rodrigo Normando | Arte Tradicional</title>
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          var theme = savedTheme || systemTheme;
+          if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#29251f');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

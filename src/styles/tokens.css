@@ -77,3 +77,21 @@
   --focus-outline-width: 2px;
   --focus-outline-offset: 2px;
 }
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Semantic colors for dark mode */
+  --color-background: var(--color-ink-900);
+  --color-surface: var(--color-ink-700);
+  --color-border: var(--color-olive-800);
+  --color-text: var(--color-paper-100);
+  --color-text-muted: var(--color-paper-200);
+  --color-action: var(--color-ochre-500);
+  --color-action-hover: var(--color-paper-200);
+  --color-on-dark: var(--color-ink-900);
+  --color-focus-ring: var(--color-ochre-500);
+  --color-focus-contrast: var(--color-paper-100);
+
+  --shadow-paper: 0 0.5rem 2rem rgb(0 0 0 / 40%);
+}
