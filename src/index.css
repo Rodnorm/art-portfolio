@@ -6,6 +6,7 @@
 
 html {
   background-color: var(--color-background);
+  scroll-padding-top: 4rem;
   scroll-behavior: smooth;
 }
 

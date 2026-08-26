@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   AppBar,
@@ -39,8 +39,14 @@ const languages = [
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   const closeDrawer = () => setOpen(false)
+
+  const closeDrawerAndRestoreFocus = () => {
+    setOpen(false)
+    window.requestAnimationFrame(() => menuButtonRef.current?.focus())
+  }
 
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language)
@@ -84,7 +90,11 @@ export default function Navbar() {
               ))}
             </Box>
 
-            <Box className={styles.languageGroup} aria-label={t('nav.language')}>
+            <Box
+              className={styles.languageGroup}
+              role="group"
+              aria-label={t('nav.language')}
+            >
               {languages.map((language) => (
                 <Button
                   key={language.code}
@@ -101,6 +111,7 @@ export default function Navbar() {
           </Box>
 
           <IconButton
+            ref={menuButtonRef}
             id="menuIcon"
             className={styles.menuButton}
             aria-label={t('nav.menu_aria')}
@@ -117,12 +128,18 @@ export default function Navbar() {
         id="navigation-drawer"
         anchor="right"
         open={open}
-        onClose={closeDrawer}
+        onClose={(_, reason) => {
+          if (reason === 'escapeKeyDown') closeDrawerAndRestoreFocus()
+          else closeDrawer()
+        }}
         PaperProps={{ className: styles.drawerPaper }}
       >
         <Box className={styles.drawerHeader}>
           <span className={styles.drawerBrand}>Rodrigo Normando</span>
-          <IconButton onClick={closeDrawer} aria-label={t('nav.close_menu')}>
+          <IconButton
+            onClick={closeDrawerAndRestoreFocus}
+            aria-label={t('nav.close_menu')}
+          >
             <ChevronRightIcon />
           </IconButton>
         </Box>
@@ -148,7 +165,11 @@ export default function Navbar() {
         <Divider />
         <Box className={styles.drawerLanguages}>
           <span className={styles.languageLabel}>{t('nav.language')}</span>
-          <Box className={styles.languageGroup}>
+          <Box
+            className={styles.languageGroup}
+            role="group"
+            aria-label={t('nav.language')}
+          >
             {languages.map((language) => (
               <Button
                 key={language.code}
