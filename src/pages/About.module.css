@@ -22,11 +22,16 @@
   padding: 0 var(--space-6) var(--space-8) 0;
 }
 
-.portrait {
+.portraitPicture {
   position: relative;
   z-index: 1;
   display: block;
   width: min(100%, 34rem);
+}
+
+.portrait {
+  display: block;
+  width: 100%;
   height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
@@ -34,16 +39,22 @@
   box-shadow: var(--shadow-paper);
 }
 
-.signature {
+.signaturePicture {
   position: absolute;
   right: 0;
   bottom: 0;
+  display: block;
   width: min(52%, 18rem);
+  transform: rotate(2deg);
+}
+
+.signature {
+  display: block;
+  width: 100%;
   height: auto;
   border: var(--border-width-thin) solid rgb(255 255 255 / 22%);
   border-radius: var(--radius-image);
   box-shadow: var(--shadow-paper);
-  transform: rotate(2deg);
 }
 
 .content {
@@ -95,13 +106,13 @@
     padding-right: var(--space-4);
   }
 
-  .signature {
+  .signaturePicture {
     width: 48%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .signature {
+  .signaturePicture {
     transform: none;
   }
 }

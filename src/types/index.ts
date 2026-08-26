@@ -8,6 +8,8 @@ export interface Artwork {
 
 export interface ImageData {
   url: string;
+  thumbnailSrcSet: string;
+  fullUrl: string;
   description: string;
   width: number;
   height: number;

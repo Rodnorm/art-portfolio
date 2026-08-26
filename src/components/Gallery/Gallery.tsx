@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Skeleton } from '@mui/material'
 import type { Artwork, ImageData } from '../../types'
-import { useImages, useImagePreloader } from '../../hooks/useImages'
+import { useImages } from '../../hooks/useImages'
 import styles from './Gallery.module.css'
 
 interface GalleryProps {
@@ -22,14 +22,12 @@ export default function Gallery({ artworks }: GalleryProps) {
   // Translate descriptions after images are loaded
   const images: ImageData[] = cachedImages.map((img, index) => ({
     url: img.url,
+    thumbnailSrcSet: img.thumbnailSrcSet,
+    fullUrl: img.fullUrl,
     description: t(artworks[index].descriptionKey),
     width: img.width,
     height: img.height,
   }))
-
-  // Preload all images in background
-  const imageUrls = cachedImages.map((img) => img.url)
-  useImagePreloader(imageUrls)
 
   const openModal = (index: number, trigger: HTMLButtonElement) => {
     lastTriggerRef.current = trigger
@@ -137,16 +135,23 @@ export default function Gallery({ artworks }: GalleryProps) {
                   aria-label={images[index]?.description}
                   aria-haspopup="dialog"
                 >
-                  <img
-                    src={images[index]?.url}
-                    alt={images[index]?.description}
-                    width={artwork.width}
-                    height={artwork.height}
-                    className={`${styles.thumbnail} ${loadedImages.has(artwork.id) ? styles.thumbnailLoaded : ''}`}
-                    loading="lazy"
-                    decoding="async"
-                    onLoad={() => handleImageLoad(artwork.id)}
-                  />
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet={images[index]?.thumbnailSrcSet}
+                      sizes="(max-width: 47.99rem) calc(100vw - 2rem), (max-width: 89.99rem) 33vw, 20rem"
+                    />
+                    <img
+                      src={images[index]?.url}
+                      alt={images[index]?.description}
+                      width={artwork.width}
+                      height={artwork.height}
+                      className={`${styles.thumbnail} ${loadedImages.has(artwork.id) ? styles.thumbnailLoaded : ''}`}
+                      loading="lazy"
+                      decoding="async"
+                      onLoad={() => handleImageLoad(artwork.id)}
+                    />
+                  </picture>
                 </button>
                 <Box component="figcaption" className={styles.caption}>
                   {images[index]?.description}
@@ -179,13 +184,16 @@ export default function Gallery({ artworks }: GalleryProps) {
               &times;
             </button>
 
-            <img
-              src={images[selectedIndex]?.url}
-              alt={images[selectedIndex]?.description}
-              width={images[selectedIndex]?.width}
-              height={images[selectedIndex]?.height}
-              className={styles.fullImage}
-            />
+            <picture className={styles.fullPicture}>
+              <source type="image/webp" srcSet={images[selectedIndex]?.fullUrl} />
+              <img
+                src={images[selectedIndex]?.url}
+                alt={images[selectedIndex]?.description}
+                width={images[selectedIndex]?.width}
+                height={images[selectedIndex]?.height}
+                className={styles.fullImage}
+              />
+            </picture>
 
             <button
               type="button"
