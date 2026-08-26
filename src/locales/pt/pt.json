@@ -61,6 +61,7 @@
         "description21": "Baby. Óleo sobre tela 15cmx15cm."
     },
     "carousel": {
+        "image_viewer": "Visualização ampliada da obra",
         "previous": "Anterior",
         "next": "Próximo",
         "zoom_in": "Ampliar",

@@ -61,6 +61,7 @@
         "description21": "Baby. Öl auf Leinwand 15cmx15cm."
     },
     "carousel": {
+        "image_viewer": "Vergrößerte Ansicht des Kunstwerks",
         "previous": "Vorheriges",
         "next": "Nächstes",
         "zoom_in": "Vergrößern",

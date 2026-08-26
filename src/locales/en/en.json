@@ -61,6 +61,7 @@
         "description21": "Baby. Oil on canvas 15cmx15cm."
     },
     "carousel": {
+        "image_viewer": "Enlarged artwork view",
         "previous": "Previous",
         "next": "Next",
         "zoom_in": "Zoom In",

@@ -65,46 +65,54 @@
 
 /* Modal */
 .modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  inset: 0;
   z-index: 2000;
-  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  overflow: auto;
+  background: rgb(41 37 31 / 96%);
 }
 
 .modalContent {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  place-items: center;
+  width: min(100%, 90rem);
+  min-height: min(90svh, 60rem);
+  padding: var(--space-12) clamp(var(--space-12), 8vw, var(--space-24));
+  outline: none;
 }
 
 .fullImage {
-  max-width: 80vw;
-  max-height: 80vh;
-  border-radius: 10px;
   z-index: 10;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 72svh;
+  border-radius: var(--radius-image);
+  object-fit: contain;
 }
 
 .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #ffffff;
-  font-size: 40px;
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  color: var(--color-on-dark);
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
-  background: none;
-  border: none;
-  z-index: 100;
+  background: rgb(255 255 255 / 8%);
+  border: var(--border-width-thin) solid rgb(255 255 255 / 24%);
+  border-radius: var(--radius-pill);
 }
 
 .prev,
@@ -112,28 +120,33 @@
   cursor: pointer;
   position: fixed;
   top: 50%;
-  color: #ffffff;
-  font-size: 40px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  transform: translateY(-50%);
   z-index: 100;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  color: var(--color-on-dark);
+  font-size: 2rem;
+  background: rgb(255 255 255 / 8%);
+  border: var(--border-width-thin) solid rgb(255 255 255 / 24%);
+  border-radius: var(--radius-pill);
+  transform: translateY(-50%);
 }
 
 .prev {
-  left: 20px;
+  left: var(--space-4);
 }
 
 .next {
-  right: 20px;
+  right: var(--space-4);
 }
 
 .prev:hover,
 .next:hover,
 .prev:focus,
 .next:focus {
-  background-color: rgba(0, 0, 0, 0.8);
+  background: var(--color-action);
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
   outline-offset: var(--focus-outline-offset);
   box-shadow: 0 0 0 4px var(--color-focus-contrast);
@@ -141,17 +154,35 @@
 
 .close:hover,
 .close:focus {
+  background: var(--color-action);
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
   outline-offset: var(--focus-outline-offset);
   box-shadow: 0 0 0 4px var(--color-focus-contrast);
 }
 
 .imageDescription {
-  margin-top: 10px;
-  color: #ffffff;
-  font-size: 16px;
+  max-width: var(--layout-reading-max);
+  margin-top: var(--space-6);
+  color: var(--color-on-dark);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-body);
   text-align: center;
-  max-width: 80vw;
+}
+
+.imageDescription p {
+  margin: 0;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (max-width: 600px) {
@@ -162,16 +193,29 @@
 
   .prev,
   .next {
-    font-size: 30px;
-    padding: 5px;
+    top: auto;
+    bottom: var(--space-4);
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.5rem;
+    transform: none;
   }
 
   .prev {
-    left: 5px;
+    left: var(--space-4);
   }
 
   .next {
-    right: 5px;
+    right: var(--space-4);
+  }
+
+  .modalContent {
+    min-height: 100%;
+    padding: var(--space-16) 0 var(--space-24);
+  }
+
+  .fullImage {
+    max-height: 68svh;
   }
 }
 

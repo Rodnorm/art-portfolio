@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Skeleton } from '@mui/material'
 import type { Artwork, ImageData } from '../../types'
@@ -13,6 +13,9 @@ export default function Gallery({ artworks }: GalleryProps) {
   const { t } = useTranslation()
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null)
 
   const { images: cachedImages, isLoading } = useImages({ artworks })
 
@@ -28,13 +31,14 @@ export default function Gallery({ artworks }: GalleryProps) {
   const imageUrls = cachedImages.map((img) => img.url)
   useImagePreloader(imageUrls)
 
-  const openModal = (index: number) => {
+  const openModal = (index: number, trigger: HTMLButtonElement) => {
+    lastTriggerRef.current = trigger
     setSelectedIndex(index)
   }
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setSelectedIndex(null)
-  }
+  }, [])
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
@@ -48,9 +52,26 @@ export default function Gallery({ artworks }: GalleryProps) {
         )
       } else if (event.key === 'Escape') {
         closeModal()
+      } else if (event.key === 'Tab') {
+        const focusableElements = dialogRef.current?.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+        )
+
+        if (!focusableElements?.length) return
+
+        const firstElement = focusableElements[0]
+        const lastElement = focusableElements[focusableElements.length - 1]
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault()
+          lastElement.focus()
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault()
+          firstElement.focus()
+        }
       }
     },
-    [selectedIndex, images.length]
+    [selectedIndex, images.length, closeModal]
   )
 
   useEffect(() => {
@@ -62,6 +83,21 @@ export default function Gallery({ artworks }: GalleryProps) {
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [selectedIndex, handleKeyDown])
+
+  const isModalOpen = selectedIndex !== null
+
+  useEffect(() => {
+    if (!isModalOpen) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      lastTriggerRef.current?.focus()
+    }
+  }, [isModalOpen])
 
   const handleImageLoad = (id: string) => {
     setLoadedImages((prev) => new Set(prev).add(id))
@@ -97,7 +133,7 @@ export default function Gallery({ artworks }: GalleryProps) {
                 <button
                   type="button"
                   className={styles.artworkButton}
-                  onClick={() => openModal(index)}
+                  onClick={(event) => openModal(index, event.currentTarget)}
                   aria-label={images[index]?.description}
                   aria-haspopup="dialog"
                 >
@@ -120,15 +156,22 @@ export default function Gallery({ artworks }: GalleryProps) {
       </Box>
 
       {selectedIndex !== null && (
-        <Box
-          className={styles.modal}
-          onClick={closeModal}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Image viewer"
-        >
-          <Box className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <Box className={styles.modal} onClick={closeModal}>
+          <Box
+            ref={dialogRef}
+            className={styles.modalContent}
+            onClick={(event) => event.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="gallery-dialog-title"
+            aria-describedby="gallery-dialog-description"
+          >
+            <h2 id="gallery-dialog-title" className={styles.visuallyHidden}>
+              {t('carousel.image_viewer')}
+            </h2>
             <button
+              ref={closeButtonRef}
+              type="button"
               className={styles.close}
               onClick={closeModal}
               aria-label={t('carousel.close')}
@@ -139,10 +182,13 @@ export default function Gallery({ artworks }: GalleryProps) {
             <img
               src={images[selectedIndex]?.url}
               alt={images[selectedIndex]?.description}
+              width={images[selectedIndex]?.width}
+              height={images[selectedIndex]?.height}
               className={styles.fullImage}
             />
 
             <button
+              type="button"
               className={styles.prev}
               onClick={() =>
                 setSelectedIndex(
@@ -155,6 +201,7 @@ export default function Gallery({ artworks }: GalleryProps) {
             </button>
 
             <button
+              type="button"
               className={styles.next}
               onClick={() =>
                 setSelectedIndex((selectedIndex + 1) % images.length)
@@ -164,7 +211,7 @@ export default function Gallery({ artworks }: GalleryProps) {
               &#10095;
             </button>
 
-            <Box className={styles.imageDescription}>
+            <Box id="gallery-dialog-description" className={styles.imageDescription}>
               <p>{images[selectedIndex]?.description}</p>
             </Box>
           </Box>
