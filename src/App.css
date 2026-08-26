@@ -5,8 +5,7 @@ body, html {
 }
 
 .App {
-  display: flex;
-  justify-content: flex-start;
+  display: block;
 }
 
 .content {

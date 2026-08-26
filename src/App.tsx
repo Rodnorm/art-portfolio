@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { HelmetProvider } from 'react-helmet-async'
+import { useTranslation } from 'react-i18next'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home'
 import Work from './pages/Work'
@@ -20,24 +21,25 @@ const queryClient = new QueryClient({
 })
 
 function App() {
+  const { t } = useTranslation()
+
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        {/* Skip link for keyboard navigation */}
-        <a href="#trabalhos" className="skip-link">
-          Skip to main content
+        <a href="#main-content" className="skip-link">
+          {t('nav.skip_to_content')}
         </a>
 
         <Box className="App">
           <Navbar />
-          <Box className="content">
+          <Box component="main" id="main-content" className="content">
             <Home />
             <Work />
             <About />
             <Prices />
             <Contact />
-            <Footer />
           </Box>
+          <Footer />
         </Box>
       </QueryClientProvider>
     </HelmetProvider>

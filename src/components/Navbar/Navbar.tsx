@@ -1,25 +1,25 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
-  Box,
-  Drawer,
   AppBar,
-  Toolbar,
+  Box,
+  Button,
+  Divider,
+  Drawer,
   IconButton,
   List,
-  Divider,
   ListItem,
   ListItemButton,
   ListItemText,
+  Toolbar,
 } from '@mui/material'
 import {
-  Menu as MenuIcon,
   ChevronRight as ChevronRightIcon,
+  Menu as MenuIcon,
 } from '@mui/icons-material'
 import { FaTiktok } from 'react-icons/fa'
 import type { NavLink } from '../../types'
-
-const drawerWidth = 240
+import styles from './Navbar.module.css'
 
 const navLinks: NavLink[] = [
   { name: 'home', href: '#home' },
@@ -39,66 +39,74 @@ const languages = [
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
-  const drawerRef = useRef<HTMLDivElement>(null)
-  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
-  const handleDrawerOpen = () => setOpen(true)
-  const handleDrawerClose = () => {
-    setOpen(false)
-    menuButtonRef.current?.focus()
+  const closeDrawer = () => setOpen(false)
+
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language)
+    closeDrawer()
   }
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng)
-    handleDrawerClose()
-  }
-
-  // Keyboard navigation - close drawer with Escape
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (open && event.key === 'Escape') {
-        handleDrawerClose()
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [open])
-
-  // Focus management
-  useEffect(() => {
-    if (open) {
-      // Focus first focusable element in drawer
-      const firstFocusable = drawerRef.current?.querySelector(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      ) as HTMLElement
-      firstFocusable?.focus()
-    }
-  }, [open])
+  const renderLinkLabel = (link: NavLink) =>
+    link.name === 'tiktok' ? (
+      <>
+        <FaTiktok aria-hidden="true" />
+        <span>{t('nav.tiktok')}</span>
+      </>
+    ) : (
+      t(`nav.${link.name}`)
+    )
 
   return (
-    <Box sx={{ display: 'flex', position: 'absolute' }}>
-      <AppBar
-        position="fixed"
-        sx={{
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
-        }}
-      >
-        <Toolbar sx={{ display: 'flex', alignSelf: 'end' }}>
+    <>
+      <AppBar component="header" className={styles.appBar} elevation={0}>
+        <Toolbar className={styles.toolbar}>
+          <a className={styles.brand} href="#home">
+            Rodrigo Normando
+          </a>
+
+          <Box
+            component="nav"
+            className={styles.desktopNavigation}
+            aria-label={t('nav.main_navigation')}
+          >
+            <Box className={styles.desktopLinks}>
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  className={styles.navigationLink}
+                  href={link.href}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
+                >
+                  {renderLinkLabel(link)}
+                </a>
+              ))}
+            </Box>
+
+            <Box className={styles.languageGroup} aria-label={t('nav.language')}>
+              {languages.map((language) => (
+                <Button
+                  key={language.code}
+                  className={`${styles.languageButton} ${
+                    i18n.resolvedLanguage === language.code ? styles.languageActive : ''
+                  }`}
+                  onClick={() => changeLanguage(language.code)}
+                  aria-pressed={i18n.resolvedLanguage === language.code}
+                >
+                  {language.code.toUpperCase()}
+                </Button>
+              ))}
+            </Box>
+          </Box>
+
           <IconButton
-            ref={menuButtonRef}
             id="menuIcon"
+            className={styles.menuButton}
             aria-label={t('nav.menu_aria')}
             aria-expanded={open}
-            aria-controls="navigation-drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            sx={[open && { display: 'none' }]}
-            style={{
-              color: 'rgb(244, 244, 244)',
-              backgroundColor: '#848282',
-            }}
+            aria-controls={open ? 'navigation-drawer' : undefined}
+            onClick={() => setOpen(true)}
           >
             <MenuIcon />
           </IconButton>
@@ -106,35 +114,21 @@ export default function Navbar() {
       </AppBar>
 
       <Drawer
-        ref={drawerRef}
         id="navigation-drawer"
-        aria-label={t('nav.navigation_menu')}
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            backgroundImage: 'url(./textura.jpg)',
-            backgroundPosition: 'center',
-            color: '#ffffff',
-          },
-        }}
-        variant="persistent"
         anchor="right"
         open={open}
+        onClose={closeDrawer}
+        PaperProps={{ className: styles.drawerPaper }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', p: 1 }}>
-          <IconButton
-            onClick={handleDrawerClose}
-            style={{ color: '#ffffff' }}
-            aria-label={t('nav.close_menu')}
-          >
+        <Box className={styles.drawerHeader}>
+          <span className={styles.drawerBrand}>Rodrigo Normando</span>
+          <IconButton onClick={closeDrawer} aria-label={t('nav.close_menu')}>
             <ChevronRightIcon />
           </IconButton>
         </Box>
         <Divider />
 
-        <List role="navigation" aria-label={t('nav.main_navigation')}>
+        <List component="nav" aria-label={t('nav.main_navigation')}>
           {navLinks.map((link) => (
             <ListItem key={link.name} disablePadding>
               <ListItemButton
@@ -142,43 +136,34 @@ export default function Navbar() {
                 href={link.href}
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
-                style={{ color: '#ffffff' }}
+                onClick={closeDrawer}
+                className={styles.drawerLink}
               >
-                {link.name === 'tiktok' ? (
-                  <FaTiktok size={24} aria-hidden="true" />
-                ) : (
-                  <ListItemText
-                    primary={t(`nav.${link.name}`)}
-                    primaryTypographyProps={{ style: { color: '#ffffff' } }}
-                  />
-                )}
-              </ListItemButton>
-            </ListItem>
-          ))}
-
-          <Divider sx={{ my: 1 }} />
-
-          <ListItem disablePadding>
-            <ListItemText
-              primary={t('nav.language')}
-              primaryTypographyProps={{
-                style: { color: '#cccccc', fontSize: '0.875rem' } }}
-            />
-          </ListItem>
-
-          {languages.map((lang) => (
-            <ListItem key={lang.code} disablePadding>
-              <ListItemButton
-                onClick={() => changeLanguage(lang.code)}
-                style={{ color: '#ffffff' }}
-                aria-pressed={i18n.language === lang.code}
-              >
-                <ListItemText primary={t(lang.label)} />
+                <ListItemText primary={renderLinkLabel(link)} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
+
+        <Divider />
+        <Box className={styles.drawerLanguages}>
+          <span className={styles.languageLabel}>{t('nav.language')}</span>
+          <Box className={styles.languageGroup}>
+            {languages.map((language) => (
+              <Button
+                key={language.code}
+                className={`${styles.languageButton} ${
+                  i18n.resolvedLanguage === language.code ? styles.languageActive : ''
+                }`}
+                onClick={() => changeLanguage(language.code)}
+                aria-pressed={i18n.resolvedLanguage === language.code}
+              >
+                {language.code.toUpperCase()}
+              </Button>
+            ))}
+          </Box>
+        </Box>
       </Drawer>
-    </Box>
+    </>
   )
 }
