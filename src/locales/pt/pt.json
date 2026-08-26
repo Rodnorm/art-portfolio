@@ -6,10 +6,12 @@
         "about": "Sobre Mim",
         "work": "Meu Trabalho",
         "prices": "Preços",
+        "tiktok": "TikTok",
         "en": "In English",
         "de": "Auf Deutsch",
         "pt": "Em Português",
         "menu_aria": "Abrir menu de navegação",
+        "skip_to_content": "Ir para o conteúdo principal",
         "close_menu": "Fechar menu",
         "navigation_menu": "Menu de navegação",
         "main_navigation": "Navegação principal",
@@ -60,6 +62,7 @@
         "description21": "Baby. Óleo sobre tela 15cmx15cm."
     },
     "carousel": {
+        "image_viewer": "Visualização ampliada da obra",
         "previous": "Anterior",
         "next": "Próximo",
         "zoom_in": "Ampliar",

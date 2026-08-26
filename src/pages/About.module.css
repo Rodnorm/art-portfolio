@@ -1,0 +1,118 @@
+.section {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  padding: var(--space-24) var(--layout-gutter);
+  color: var(--color-text);
+  text-align: left;
+  background: var(--color-surface);
+}
+
+.layout {
+  display: grid;
+  width: min(100%, var(--layout-content-max));
+  margin-inline: auto;
+  gap: var(--space-12);
+}
+
+.media {
+  position: relative;
+  align-self: start;
+  padding: 0 var(--space-6) var(--space-8) 0;
+}
+
+.portraitPicture {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100%, 34rem);
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-paper);
+}
+
+.signaturePicture {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: min(52%, 18rem);
+  transform: rotate(2deg);
+}
+
+.signature {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--border-width-thin) solid rgb(255 255 255 / 22%);
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-paper);
+}
+
+.content {
+  align-self: center;
+}
+
+.title {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-family-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.title::after {
+  display: block;
+  width: 5rem;
+  height: 2px;
+  margin-top: var(--space-6);
+  content: '';
+  background: var(--color-terracotta-600);
+}
+
+.biography {
+  max-width: var(--layout-reading-max);
+  margin: var(--space-8) 0 0;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-body);
+  font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+@media (min-width: 56rem) {
+  .layout {
+    grid-template-columns: minmax(18rem, 0.85fr) minmax(24rem, 1.15fr);
+    align-items: center;
+    gap: clamp(var(--space-12), 8vw, var(--space-24));
+  }
+}
+
+@media (max-width: 30rem) {
+  .section {
+    padding-block: var(--space-16);
+  }
+
+  .media {
+    padding-right: var(--space-4);
+  }
+
+  .signaturePicture {
+    width: 48%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signaturePicture {
+    transform: none;
+  }
+}

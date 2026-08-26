@@ -1,6 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 import type { Artwork, ImageData } from '../types'
 
+const generatedImages = import.meta.glob<string>('../assets/generated/*.webp', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+
 interface UseImagesOptions {
   artworks: Artwork[]
   enabled?: boolean
@@ -8,6 +14,12 @@ interface UseImagesOptions {
 
 function importImage(filename: string): string {
   return new URL(`../assets/img/${filename}?url`, import.meta.url).href
+}
+
+function generatedImage(filename: string): string {
+  const image = generatedImages[`../assets/generated/${filename}`]
+  if (!image) throw new Error(`Generated image not found: ${filename}`)
+  return image
 }
 
 export function useImages({ artworks, enabled = true }: UseImagesOptions) {
@@ -18,7 +30,14 @@ export function useImages({ artworks, enabled = true }: UseImagesOptions) {
       const imageDataPromises = artworks.map(async (artwork) => {
         return {
           url: importImage(artwork.filename),
+          thumbnailSrcSet: [
+            `${generatedImage(`${artwork.id}-thumb-480.webp`)} 480w`,
+            `${generatedImage(`${artwork.id}-thumb-960.webp`)} 960w`,
+          ].join(', '),
+          fullUrl: generatedImage(`${artwork.id}-full-1600.webp`),
           description: artwork.descriptionKey, // Will be translated by the component
+          width: artwork.width,
+          height: artwork.height,
         }
       })
       return Promise.all(imageDataPromises)
@@ -33,24 +52,4 @@ export function useImages({ artworks, enabled = true }: UseImagesOptions) {
     isLoading,
     error,
   }
-}
-
-export function useImagePreloader(imageUrls: string[]) {
-  return useQuery({
-    queryKey: ['preload', imageUrls.join(',')],
-    queryFn: async () => {
-      const loadPromises = imageUrls.map((url) => {
-        return new Promise<string>((resolve, reject) => {
-          const img = new Image()
-          img.onload = () => resolve(url)
-          img.onerror = () => reject(new Error(`Failed to load: ${url}`))
-          img.src = url
-        })
-      })
-      await Promise.all(loadPromises)
-      return imageUrls
-    },
-    enabled: imageUrls.length > 0,
-    staleTime: Infinity,
-  })
 }

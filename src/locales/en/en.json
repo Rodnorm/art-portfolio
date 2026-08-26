@@ -6,10 +6,12 @@
         "about": "About Me",
         "work": "My Work",
         "prices": "Prices",
+        "tiktok": "TikTok",
         "en": "In English",
         "de": "Auf Deutsch",
         "pt": "Em Português",
         "menu_aria": "Open navigation menu",
+        "skip_to_content": "Skip to main content",
         "close_menu": "Close menu",
         "navigation_menu": "Navigation menu",
         "main_navigation": "Main navigation",
@@ -60,6 +62,7 @@
         "description21": "Baby. Oil on canvas 15cmx15cm."
     },
     "carousel": {
+        "image_viewer": "Enlarged artwork view",
         "previous": "Previous",
         "next": "Next",
         "zoom_in": "Zoom In",

@@ -1,0 +1,466 @@
+{
+  "artworks": {
+    "buarque": {
+      "thumb-480": {
+        "filename": "buarque-thumb-480.webp",
+        "width": 480,
+        "height": 620,
+        "size": 41800
+      },
+      "thumb-960": {
+        "filename": "buarque-thumb-960.webp",
+        "width": 960,
+        "height": 1239,
+        "size": 128790
+      },
+      "full-1600": {
+        "filename": "buarque-full-1600.webp",
+        "width": 1278,
+        "height": 1650,
+        "size": 337232
+      }
+    },
+    "dicaprio": {
+      "thumb-480": {
+        "filename": "dicaprio-thumb-480.webp",
+        "width": 480,
+        "height": 619,
+        "size": 51218
+      },
+      "thumb-960": {
+        "filename": "dicaprio-thumb-960.webp",
+        "width": 960,
+        "height": 1238,
+        "size": 154182
+      },
+      "full-1600": {
+        "filename": "dicaprio-full-1600.webp",
+        "width": 1188,
+        "height": 1532,
+        "size": 366532
+      }
+    },
+    "crews": {
+      "thumb-480": {
+        "filename": "crews-thumb-480.webp",
+        "width": 480,
+        "height": 608,
+        "size": 34864
+      },
+      "thumb-960": {
+        "filename": "crews-thumb-960.webp",
+        "width": 960,
+        "height": 1215,
+        "size": 108782
+      },
+      "full-1600": {
+        "filename": "crews-full-1600.webp",
+        "width": 1264,
+        "height": 1600,
+        "size": 276414
+      }
+    },
+    "estudo_tonal": {
+      "thumb-480": {
+        "filename": "estudo_tonal-thumb-480.webp",
+        "width": 480,
+        "height": 670,
+        "size": 65598
+      },
+      "thumb-960": {
+        "filename": "estudo_tonal-thumb-960.webp",
+        "width": 960,
+        "height": 1341,
+        "size": 192860
+      },
+      "full-1600": {
+        "filename": "estudo_tonal-full-1600.webp",
+        "width": 1338,
+        "height": 1869,
+        "size": 507746
+      }
+    },
+    "gagarin": {
+      "thumb-480": {
+        "filename": "gagarin-thumb-480.webp",
+        "width": 480,
+        "height": 704,
+        "size": 95370
+      },
+      "thumb-960": {
+        "filename": "gagarin-thumb-960.webp",
+        "width": 960,
+        "height": 1408,
+        "size": 309248
+      },
+      "full-1600": {
+        "filename": "gagarin-full-1600.webp",
+        "width": 1147,
+        "height": 1682,
+        "size": 584908
+      }
+    },
+    "homem_cigarro": {
+      "thumb-480": {
+        "filename": "homem_cigarro-thumb-480.webp",
+        "width": 480,
+        "height": 611,
+        "size": 39396
+      },
+      "thumb-960": {
+        "filename": "homem_cigarro-thumb-960.webp",
+        "width": 960,
+        "height": 1223,
+        "size": 132148
+      },
+      "full-1600": {
+        "filename": "homem_cigarro-full-1600.webp",
+        "width": 1572,
+        "height": 2002,
+        "size": 435628
+      }
+    },
+    "homem_pano": {
+      "thumb-480": {
+        "filename": "homem_pano-thumb-480.webp",
+        "width": 480,
+        "height": 606,
+        "size": 76712
+      },
+      "thumb-960": {
+        "filename": "homem_pano-thumb-960.webp",
+        "width": 960,
+        "height": 1212,
+        "size": 267400
+      },
+      "full-1600": {
+        "filename": "homem_pano-full-1600.webp",
+        "width": 1172,
+        "height": 1480,
+        "size": 528990
+      }
+    },
+    "matogrosso": {
+      "thumb-480": {
+        "filename": "matogrosso-thumb-480.webp",
+        "width": 480,
+        "height": 616,
+        "size": 44924
+      },
+      "thumb-960": {
+        "filename": "matogrosso-thumb-960.webp",
+        "width": 960,
+        "height": 1232,
+        "size": 142670
+      },
+      "full-1600": {
+        "filename": "matogrosso-full-1600.webp",
+        "width": 1240,
+        "height": 1591,
+        "size": 366390
+      }
+    },
+    "mulher_sorriso": {
+      "thumb-480": {
+        "filename": "mulher_sorriso-thumb-480.webp",
+        "width": 480,
+        "height": 690,
+        "size": 39912
+      },
+      "thumb-960": {
+        "filename": "mulher_sorriso-thumb-960.webp",
+        "width": 960,
+        "height": 1381,
+        "size": 106580
+      },
+      "full-1600": {
+        "filename": "mulher_sorriso-full-1600.webp",
+        "width": 1478,
+        "height": 2126,
+        "size": 309660
+      }
+    },
+    "vila": {
+      "thumb-480": {
+        "filename": "vila-thumb-480.webp",
+        "width": 480,
+        "height": 434,
+        "size": 57512
+      },
+      "thumb-960": {
+        "filename": "vila-thumb-960.webp",
+        "width": 960,
+        "height": 869,
+        "size": 141760
+      },
+      "full-1600": {
+        "filename": "vila-full-1600.webp",
+        "width": 1021,
+        "height": 924,
+        "size": 245492
+      }
+    },
+    "gata_lily": {
+      "thumb-480": {
+        "filename": "gata_lily-thumb-480.webp",
+        "width": 480,
+        "height": 300,
+        "size": 21502
+      },
+      "thumb-960": {
+        "filename": "gata_lily-thumb-960.webp",
+        "width": 960,
+        "height": 600,
+        "size": 69522
+      },
+      "full-1600": {
+        "filename": "gata_lily-full-1600.webp",
+        "width": 1600,
+        "height": 1001,
+        "size": 199948
+      }
+    },
+    "frajola": {
+      "thumb-480": {
+        "filename": "frajola-thumb-480.webp",
+        "width": 480,
+        "height": 687,
+        "size": 78050
+      },
+      "thumb-960": {
+        "filename": "frajola-thumb-960.webp",
+        "width": 960,
+        "height": 1373,
+        "size": 252532
+      },
+      "full-1600": {
+        "filename": "frajola-full-1600.webp",
+        "width": 1482,
+        "height": 2120,
+        "size": 767632
+      }
+    },
+    "garoto_bebendo": {
+      "thumb-480": {
+        "filename": "garoto_bebendo-thumb-480.webp",
+        "width": 480,
+        "height": 817,
+        "size": 43488
+      },
+      "thumb-960": {
+        "filename": "garoto_bebendo-thumb-960.webp",
+        "width": 902,
+        "height": 1536,
+        "size": 146396
+      },
+      "full-1600": {
+        "filename": "garoto_bebendo-full-1600.webp",
+        "width": 902,
+        "height": 1536,
+        "size": 213026
+      }
+    },
+    "alphonse_mucha": {
+      "thumb-480": {
+        "filename": "alphonse_mucha-thumb-480.webp",
+        "width": 480,
+        "height": 675,
+        "size": 99058
+      },
+      "thumb-960": {
+        "filename": "alphonse_mucha-thumb-960.webp",
+        "width": 960,
+        "height": 1350,
+        "size": 283564
+      },
+      "full-1600": {
+        "filename": "alphonse_mucha-full-1600.webp",
+        "width": 1496,
+        "height": 2104,
+        "size": 746170
+      }
+    },
+    "mulher_cacheado": {
+      "thumb-480": {
+        "filename": "mulher_cacheado-thumb-480.webp",
+        "width": 480,
+        "height": 580,
+        "size": 64592
+      },
+      "thumb-960": {
+        "filename": "mulher_cacheado-thumb-960.webp",
+        "width": 960,
+        "height": 1160,
+        "size": 196454
+      },
+      "full-1600": {
+        "filename": "mulher_cacheado-full-1600.webp",
+        "width": 1395,
+        "height": 1686,
+        "size": 537408
+      }
+    },
+    "terry_crews": {
+      "thumb-480": {
+        "filename": "terry_crews-thumb-480.webp",
+        "width": 480,
+        "height": 584,
+        "size": 41238
+      },
+      "thumb-960": {
+        "filename": "terry_crews-thumb-960.webp",
+        "width": 960,
+        "height": 1168,
+        "size": 125874
+      },
+      "full-1600": {
+        "filename": "terry_crews-full-1600.webp",
+        "width": 1313,
+        "height": 1598,
+        "size": 323010
+      }
+    },
+    "leonardo_dicaprio": {
+      "thumb-480": {
+        "filename": "leonardo_dicaprio-thumb-480.webp",
+        "width": 480,
+        "height": 573,
+        "size": 41768
+      },
+      "thumb-960": {
+        "filename": "leonardo_dicaprio-thumb-960.webp",
+        "width": 960,
+        "height": 1147,
+        "size": 144166
+      },
+      "full-1600": {
+        "filename": "leonardo_dicaprio-full-1600.webp",
+        "width": 1458,
+        "height": 1742,
+        "size": 473022
+      }
+    },
+    "mulher_flor": {
+      "thumb-480": {
+        "filename": "mulher_flor-thumb-480.webp",
+        "width": 480,
+        "height": 677,
+        "size": 66498
+      },
+      "thumb-960": {
+        "filename": "mulher_flor-thumb-960.webp",
+        "width": 960,
+        "height": 1354,
+        "size": 194912
+      },
+      "full-1600": {
+        "filename": "mulher_flor-full-1600.webp",
+        "width": 1228,
+        "height": 1732,
+        "size": 457106
+      }
+    },
+    "baby": {
+      "thumb-480": {
+        "filename": "baby-thumb-480.webp",
+        "width": 480,
+        "height": 488,
+        "size": 58846
+      },
+      "thumb-960": {
+        "filename": "baby-thumb-960.webp",
+        "width": 960,
+        "height": 975,
+        "size": 174238
+      },
+      "full-1600": {
+        "filename": "baby-full-1600.webp",
+        "width": 1600,
+        "height": 1625,
+        "size": 444076
+      }
+    },
+    "mestre_joao": {
+      "thumb-480": {
+        "filename": "mestre_joao-thumb-480.webp",
+        "width": 480,
+        "height": 481,
+        "size": 58054
+      },
+      "thumb-960": {
+        "filename": "mestre_joao-thumb-960.webp",
+        "width": 960,
+        "height": 962,
+        "size": 168924
+      },
+      "full-1600": {
+        "filename": "mestre_joao-full-1600.webp",
+        "width": 1600,
+        "height": 1604,
+        "size": 446610
+      }
+    },
+    "baby1": {
+      "thumb-480": {
+        "filename": "baby1-thumb-480.webp",
+        "width": 416,
+        "height": 414,
+        "size": 45434
+      },
+      "thumb-960": {
+        "filename": "baby1-thumb-960.webp",
+        "width": 416,
+        "height": 414,
+        "size": 49544
+      },
+      "full-1600": {
+        "filename": "baby1-full-1600.webp",
+        "width": 416,
+        "height": 414,
+        "size": 62716
+      }
+    }
+  },
+  "hero": {
+    "640": {
+      "filename": "hero-640.webp",
+      "width": 640,
+      "height": 341,
+      "size": 63144
+    },
+    "966": {
+      "filename": "hero-966.webp",
+      "width": 966,
+      "height": 515,
+      "size": 154428
+    }
+  },
+  "portrait": {
+    "640": {
+      "filename": "portrait-640.webp",
+      "width": 640,
+      "height": 853,
+      "size": 99406
+    },
+    "1200": {
+      "filename": "portrait-1200.webp",
+      "width": 1200,
+      "height": 1600,
+      "size": 367286
+    }
+  },
+  "signature": {
+    "640": {
+      "filename": "signature-640.webp",
+      "width": 640,
+      "height": 515,
+      "size": 32380
+    },
+    "1200": {
+      "filename": "signature-1200.webp",
+      "width": 1200,
+      "height": 965,
+      "size": 86880
+    }
+  }
+}

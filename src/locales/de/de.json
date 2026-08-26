@@ -6,10 +6,12 @@
         "about": "Über mich",
         "work": "Meine Arbeit",
         "prices": "Preise",
+        "tiktok": "TikTok",
         "en": "In English",
         "de": "Auf Deutsch",
         "pt": "Em Português",
         "menu_aria": "Navigationsmenü öffnen",
+        "skip_to_content": "Zum Hauptinhalt springen",
         "close_menu": "Menü schließen",
         "navigation_menu": "Navigationsmenü",
         "main_navigation": "Hauptnavigation",
@@ -60,6 +62,7 @@
         "description21": "Baby. Öl auf Leinwand 15cmx15cm."
     },
     "carousel": {
+        "image_viewer": "Vergrößerte Ansicht des Kunstwerks",
         "previous": "Vorheriges",
         "next": "Nächstes",
         "zoom_in": "Vergrößern",
