@@ -8,7 +8,7 @@
 
 Refatorar incrementalmente o portfólio para uma linguagem de **galeria editorial contemporânea**, com referências a papel, pigmentos, pintura tradicional e ateliê. A galeria de obras deve se tornar o principal elemento visual, com melhor aproveitamento das proporções originais, hierarquia tipográfica mais autoral e uma experiência consistente em desktop e dispositivos móveis.
 
-Todo o conteúdo e comportamento existentes devem ser preservados durante a refatoração: biografia, preços, prazos, traduções, obras, ordem das obras, descrições, links, WhatsApp, SEO e funcionalidades. Qualquer proposta futura que altere conteúdo, ordem, URL ou comportamento público exige aprovação separada.
+Todo o conteúdo e comportamento existentes devem ser preservados durante a refatoração: biografia, preços, prazos, traduções, obras, ordem das obras, descrições, links, SEO e funcionalidades. Em 26 de agosto de 2026, foi aprovada separadamente a substituição do WhatsApp pelo formulário Formspree para remover a exposição do número pessoal.
 
 O trabalho deve permanecer:
 
@@ -72,7 +72,7 @@ src/
 │   ├── Work                        título e Gallery
 │   ├── About                       biografia e retrato
 │   ├── Prices                      cartões de preços
-│   └── Contact                     formulário WhatsApp e redes sociais
+│   └── Contact                     formulário Formspree e redes sociais
 ├── data/artworks.json              21 obras, ordem e chaves de descrição
 ├── hooks/                          imagens, idioma e movimento reduzido
 ├── locales/                        pt, en e de
@@ -203,7 +203,7 @@ Consequência: a interface combina aparência padrão do MUI, cartões genérico
 
 - 21 obras, na ordem de IDs: `buarque`, `dicaprio`, `crews`, `estudo_tonal`, `gagarin`, `homem_cigarro`, `homem_pano`, `matogrosso`, `mulher_sorriso`, `vila`, `gata_lily`, `frajola`, `garoto_bebendo`, `alphonse_mucha`, `mulher_cacheado`, `terry_crews`, `leonardo_dicaprio`, `mulher_flor`, `baby`, `mestre_joao`, `baby1`.
 - Cinco produtos de preço: retrato a lápis A4, retrato a óleo A4, retrato a óleo 60×50, retrato a óleo de animais A4 e aquarela Art Nouveau 29×42.
-- WhatsApp: `491795204649`.
+- O contato direto por WhatsApp foi substituído por um formulário para não expor o número pessoal.
 - Instagram: `https://www.instagram.com/atelier.normando/`.
 - TikTok: `https://www.tiktok.com/@atelier.normando`.
 - Âncoras públicas: `#home`, `#trabalhos`, `#about`, `#precos`, `#contato`.
@@ -253,7 +253,7 @@ Esses pontos devem ser corrigidos sem apagar metatags ou alterar URLs públicas.
 - Conteúdo artístico real e amplo, com 21 obras e descrições detalhadas.
 - Três idiomas com estrutura consistente.
 - Separação existente entre dados das obras e apresentação.
-- Integração WhatsApp simples e direta.
+- Formulário de contato sem exposição de telefone ou e-mail pessoal no frontend.
 - Navegação por âncoras adequada ao formato de portfólio de uma página.
 - Base inicial de acessibilidade: labels, Escape/setas, skip link, foco visível e movimento reduzido.
 - Hero, assinatura, retrato e textura já fornecem matéria-prima visual autoral.
@@ -755,7 +755,7 @@ Não chamar um deploy de concluído apenas porque o workflow iniciou.
 
 ### Etapa 7 — Refatorar contato e rodapé
 
-**Objetivo:** tornar o contato claro, confortável e coerente com a identidade, preservando WhatsApp e redes.
+**Objetivo:** tornar o contato claro, confortável e coerente com a identidade, usando Formspree e preservando as redes sociais.
 
 **Escopo:** formulário, CTA, links sociais e footer.
 
@@ -763,11 +763,11 @@ Não chamar um deploy de concluído apenas porque o workflow iniciou.
 
 **Alterações planejadas:** campos com largura útil total; estados hover/focus/disabled coerentes; CTA terracota; targets de toque; footer umber/olive; labels localizadas quando hoje hardcoded.
 
-**Não alterar:** número `491795204649`, template de mensagem, Instagram, TikTok, validação required, copyright ou textos.
+**Não alterar:** Instagram, TikTok, validação required, copyright ou textos.
 
 **Dependências:** tokens e Navbar aprovados.
 
-**Critérios de aceite:** envio abre URL `wa.me` correta com mensagem codificada nos três idiomas; campos legíveis em mobile; navegação por teclado; links externos seguros; contraste AA.
+**Critérios de aceite:** envio usa o endpoint Formspree configurado, apresenta estados de envio/sucesso/erro nos três idiomas e inclui aviso de privacidade; campos legíveis em mobile; navegação por teclado; links externos seguros; contraste AA.
 
 **Comandos de validação:** lint, build; teste sem enviar mensagem real; teclado e viewports.
 
@@ -779,7 +779,7 @@ Não chamar um deploy de concluído apenas porque o workflow iniciou.
 
 **Checklist:**
 
-- [ ] WhatsApp preservado.
+- [ ] Formulário Formspree configurável sem expor dados pessoais.
 - [ ] Links sociais preservados.
 - [ ] Campos largos e acessíveis.
 - [ ] Footer consistente.
@@ -894,8 +894,8 @@ Antes de cada commit e deploy, comparar com o baseline e confirmar:
 - [ ] Todos os prazos e observações permanecem inalterados.
 - [ ] Traduções em português, inglês e alemão permanecem disponíveis.
 - [ ] Links do Instagram e TikTok permanecem idênticos.
-- [ ] Número do WhatsApp permanece `491795204649`.
-- [ ] Template e codificação da mensagem WhatsApp continuam funcionando.
+- [ ] Nenhum número pessoal permanece exposto na árvore atual do repositório.
+- [ ] Estados do formulário e aviso de privacidade funcionam nos três idiomas.
 - [ ] As 21 obras permanecem presentes.
 - [ ] A ordem das 21 obras permanece igual ao JSON atual, salvo aprovação explícita.
 - [ ] Descrições, técnicas, nomes e dimensões das obras permanecem iguais.
@@ -944,7 +944,7 @@ A refatoração só estará completa quando todos os itens forem verdadeiros:
 
 ### Conteúdo, i18n e SEO
 
-- [ ] Textos, biografia, preços, prazos, links e WhatsApp foram preservados.
+- [ ] Textos, biografia, preços, prazos e links não relacionados ao contato foram preservados.
 - [ ] 21 obras, ordem e descrições foram preservadas.
 - [ ] Português, inglês e alemão foram testados.
 - [ ] Nenhuma chave de tradução está visível.

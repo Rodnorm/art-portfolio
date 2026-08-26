@@ -25,11 +25,15 @@
         "follow_me": "Folgen Sie mir in den sozialen Medien",
         "get_in_touch": "Kontaktieren Sie mich",
         "name": "Name",
+        "email": "E-Mail",
         "message": "Nachricht",
-        "send_wpp": "Über WhatsApp senden",
-        "wpp": {
-            "message": "Hallo, mein Name ist {{name}}. {{message}}"
-        }
+        "send": "Nachricht senden",
+        "sending": "Wird gesendet...",
+        "success": "Nachricht gesendet. Vielen Dank für Ihre Anfrage!",
+        "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+        "not_configured": "Das Kontaktformular ist in Kürze verfügbar.",
+        "privacy_notice": "Ihr Name, Ihre E-Mail-Adresse und Ihre Nachricht werden über Formspree verarbeitet, um Ihre Anfrage zu beantworten.",
+        "privacy_link": "Datenschutzerklärung von Formspree"
     },
     "notes": {
         "no_frames_note": "Die Gemälde werden ohne Rahmen geliefert",

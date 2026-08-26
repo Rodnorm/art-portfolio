@@ -60,6 +60,47 @@
   resize: vertical;
 }
 
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.privacyNotice,
+.configurationNotice,
+.submissionStatus {
+  max-width: var(--layout-reading-max);
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+.privacyNotice a {
+  color: var(--color-text);
+  text-underline-offset: 0.2em;
+}
+
+.privacyNotice a:hover {
+  color: var(--color-action-hover);
+}
+
+.configurationNotice {
+  font-weight: var(--font-weight-semibold);
+}
+
+.submissionStatus {
+  min-height: 1.4em;
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
 .formGroup input:hover,
 .formGroup textarea:hover {
   border-color: var(--color-ink-700);
@@ -80,6 +121,11 @@
 
 .submitButton:hover {
   background: var(--color-action-hover);
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .socialLinks {

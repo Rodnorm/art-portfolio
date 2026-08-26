@@ -33,7 +33,7 @@ src/
 │   ├── Prices.tsx      # Tabela de preços
 │   └── Prices.css
 ├── Contact/
-│   ├── Contact.tsx     # Formulário WhatsApp
+│   ├── Contact.tsx     # Formulário de contato
 │   └── Contact.css
 ├── Footer/
 │   ├── Footer.tsx
@@ -71,7 +71,7 @@ src/
 - ✅ UI em MUI com theming consistente
 - ✅ Navegação com drawer responsivo
 - ✅ Modal de imagens com keyboard navigation
-- ✅ Integração WhatsApp funcional
+- ✅ Seção de contato funcional
 
 ---
 
