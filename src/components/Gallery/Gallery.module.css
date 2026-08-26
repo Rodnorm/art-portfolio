@@ -110,14 +110,16 @@
 .prev:focus,
 .next:focus {
   background-color: rgba(0, 0, 0, 0.8);
-  outline: 2px solid #4a90d9;
-  outline-offset: 2px;
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
+  box-shadow: 0 0 0 4px var(--color-focus-contrast);
 }
 
 .close:hover,
 .close:focus {
-  outline: 2px solid #4a90d9;
-  outline-offset: 2px;
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
+  box-shadow: 0 0 0 4px var(--color-focus-contrast);
 }
 
 .imageDescription {
