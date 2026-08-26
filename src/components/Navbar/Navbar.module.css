@@ -1,7 +1,7 @@
 .appBar {
   color: var(--color-text) !important;
-  background: rgb(251 248 241 / 92%) !important;
-  border-bottom: var(--border-width-thin) solid rgb(41 37 31 / 12%);
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent) !important;
+  border-bottom: var(--border-width-thin) solid color-mix(in srgb, var(--color-border) 12%, transparent);
   backdrop-filter: blur(12px);
 }
 
@@ -77,13 +77,21 @@
 .menuButton {
   width: 2.75rem;
   height: 2.75rem;
-  margin-left: auto !important;
+  margin-left: var(--space-2) !important;
   color: var(--color-on-dark) !important;
   background: var(--color-action) !important;
 }
 
 .menuButton:hover {
   background: var(--color-action-hover) !important;
+}
+
+.themeToggleMobile {
+  display: flex !important;
+}
+
+.themeToggleDesktop {
+  display: none !important;
 }
 
 .drawerPaper {
@@ -132,6 +140,14 @@
 
   .menuButton {
     display: none !important;
+  }
+
+  .themeToggleMobile {
+    display: none !important;
+  }
+
+  .themeToggleDesktop {
+    display: flex !important;
   }
 }
 

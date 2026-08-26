@@ -2,12 +2,27 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/art-portfolio/favicon.ico" />
+    <link rel="manifest" href="/art-portfolio/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f2ebdd" />
     <meta name="description" content="Rodrigo Normando - Arte Tradicional. Retratos a lápis, carvão, óleo e aquarela." />
     <title>Rodrigo Normando | Arte Tradicional</title>
-    <script type="module" crossorigin src="/assets/index-C1-KgYnT.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-r7nLp0Ez.css">
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          var theme = savedTheme || systemTheme;
+          if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#29251f');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/art-portfolio/assets/index-DqbPcvuT.js"></script>
+    <link rel="stylesheet" crossorigin href="/art-portfolio/assets/index-BAJULpz-.css">
   </head>
   <body>
     <div id="root"></div>

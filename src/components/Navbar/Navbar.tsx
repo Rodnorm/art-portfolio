@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   AppBar,
@@ -16,6 +16,8 @@ import {
 import {
   ChevronRight as ChevronRightIcon,
   Menu as MenuIcon,
+  DarkMode as DarkModeIcon,
+  LightMode as LightModeIcon,
 } from '@mui/icons-material'
 import { FaTiktok } from 'react-icons/fa'
 import type { NavLink } from '../../types'
@@ -39,7 +41,25 @@ const languages = [
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+  })
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#29251f')
+    } else {
+      document.documentElement.removeAttribute('data-theme')
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f2ebdd')
+    }
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+  }
 
   const closeDrawer = () => setOpen(false)
 
@@ -108,7 +128,25 @@ export default function Navbar() {
                 </Button>
               ))}
             </Box>
+
+            <IconButton
+              onClick={toggleTheme}
+              aria-label={t('nav.toggle_theme')}
+              className={styles.themeToggleDesktop}
+              sx={{ ml: 2, color: 'var(--color-text)' }}
+            >
+              {theme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+            </IconButton>
           </Box>
+
+          <IconButton
+            onClick={toggleTheme}
+            aria-label={t('nav.toggle_theme')}
+            className={styles.themeToggleMobile}
+            sx={{ ml: 'auto', color: 'var(--color-text)' }}
+          >
+            {theme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+          </IconButton>
 
           <IconButton
             ref={menuButtonRef}
