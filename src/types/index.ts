@@ -2,11 +2,15 @@ export interface Artwork {
   id: string;
   filename: string;
   descriptionKey: string;
+  width: number;
+  height: number;
 }
 
 export interface ImageData {
   url: string;
   description: string;
+  width: number;
+  height: number;
 }
 
 export interface PriceItem {

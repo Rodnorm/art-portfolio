@@ -1,17 +1,25 @@
 .imageGrid {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  align-items: start;
+  gap: var(--space-12) var(--space-6);
 }
 
-.imageCard {
-  width: 150px;
-  height: 150px;
+.imageFigure {
+  min-width: 0;
+  margin: 0;
+}
+
+.artworkButton {
+  display: block;
+  width: 100%;
+  padding: 0;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 10px;
-  background-color: #e0e0e0;
+  background: var(--color-paper-200);
+  border: 0;
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-paper);
 }
 
 .skeletonContainer {
@@ -22,21 +30,37 @@
 
 .skeleton {
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  height: auto !important;
+  border-radius: var(--radius-image);
 }
 
 .thumbnail {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+  height: auto;
+  border-radius: var(--radius-image);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: scale(1.01);
+  transition:
+    opacity var(--duration-control) var(--easing-standard),
+    transform var(--duration-control) var(--easing-standard);
 }
 
 .thumbnailLoaded {
   opacity: 1;
+}
+
+.artworkButton:hover .thumbnail,
+.artworkButton:focus-visible .thumbnail {
+  transform: scale(1.02);
+}
+
+.caption {
+  max-width: var(--layout-reading-max);
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
 }
 
 /* Modal */
@@ -131,9 +155,9 @@
 }
 
 @media (max-width: 600px) {
-  .imageCard {
-    width: 100px;
-    height: 100px;
+  .imageGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
   }
 
   .prev,
@@ -154,6 +178,7 @@
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .thumbnail {
+    transform: none;
     transition: none;
   }
 }

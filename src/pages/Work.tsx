@@ -16,9 +16,9 @@ export default function Work() {
         title={t('work.label')}
         description="Galeria de arte tradicional - desenhos a lápis, carvão, e pinturas a óleo e aquarela."
       />
-      <Container component="section" id="trabalhos">
-        <Box>
-          <Typography className="title" component="h1">
+      <Container component="section" id="trabalhos" maxWidth={false}>
+        <Box className="work-content">
+          <Typography className="title" component="h2">
             {t('work.label')}
           </Typography>
           <Gallery artworks={artworks} />

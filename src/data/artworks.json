@@ -2,106 +2,148 @@
   {
     "id": "buarque",
     "filename": "Buarque.JPEG",
-    "descriptionKey": "work.description1"
+    "descriptionKey": "work.description1",
+    "width": 1278,
+    "height": 1650
   },
   {
     "id": "dicaprio",
     "filename": "DiCaprio.JPEG",
-    "descriptionKey": "work.description2"
+    "descriptionKey": "work.description2",
+    "width": 1188,
+    "height": 1532
   },
   {
     "id": "crews",
     "filename": "Crews.JPEG",
-    "descriptionKey": "work.description3"
+    "descriptionKey": "work.description3",
+    "width": 1264,
+    "height": 1600
   },
   {
     "id": "estudo_tonal",
     "filename": "Estudo_tonal.JPEG",
-    "descriptionKey": "work.description4"
+    "descriptionKey": "work.description4",
+    "width": 1338,
+    "height": 1869
   },
   {
     "id": "gagarin",
     "filename": "Gagarin.JPEG",
-    "descriptionKey": "work.description5"
+    "descriptionKey": "work.description5",
+    "width": 1147,
+    "height": 1682
   },
   {
     "id": "homem_cigarro",
     "filename": "Homem_com_cigarro.JPEG",
-    "descriptionKey": "work.description6"
+    "descriptionKey": "work.description6",
+    "width": 1572,
+    "height": 2002
   },
   {
     "id": "homem_pano",
     "filename": "Homem_com_pano.JPEG",
-    "descriptionKey": "work.description7"
+    "descriptionKey": "work.description7",
+    "width": 1172,
+    "height": 1480
   },
   {
     "id": "matogrosso",
     "filename": "Matogrosso.JPEG",
-    "descriptionKey": "work.description8"
+    "descriptionKey": "work.description8",
+    "width": 1240,
+    "height": 1591
   },
   {
     "id": "mulher_sorriso",
     "filename": "Mulher_com_sorriso.JPEG",
-    "descriptionKey": "work.description9"
+    "descriptionKey": "work.description9",
+    "width": 1478,
+    "height": 2126
   },
   {
     "id": "vila",
     "filename": "Vila.JPEG",
-    "descriptionKey": "work.description10"
+    "descriptionKey": "work.description10",
+    "width": 1021,
+    "height": 924
   },
   {
     "id": "gata_lily",
     "filename": "Gata_Lily.JPEG",
-    "descriptionKey": "work.description11"
+    "descriptionKey": "work.description11",
+    "width": 2242,
+    "height": 1402
   },
   {
     "id": "frajola",
     "filename": "Frajola.JPEG",
-    "descriptionKey": "work.description12"
+    "descriptionKey": "work.description12",
+    "width": 1482,
+    "height": 2120
   },
   {
     "id": "garoto_bebendo",
     "filename": "Garoto_bebendo.JPEG",
-    "descriptionKey": "work.description13"
+    "descriptionKey": "work.description13",
+    "width": 902,
+    "height": 1536
   },
   {
     "id": "alphonse_mucha",
     "filename": "CopiaAlphonseMucha.JPEG",
-    "descriptionKey": "work.description14"
+    "descriptionKey": "work.description14",
+    "width": 1496,
+    "height": 2104
   },
   {
     "id": "mulher_cacheado",
     "filename": "MulherComCabeloCacheadoPintura.JPEG",
-    "descriptionKey": "work.description15"
+    "descriptionKey": "work.description15",
+    "width": 1395,
+    "height": 1686
   },
   {
     "id": "terry_crews",
     "filename": "TerryCrewsPintura.JPEG",
-    "descriptionKey": "work.description16"
+    "descriptionKey": "work.description16",
+    "width": 1313,
+    "height": 1598
   },
   {
     "id": "leonardo_dicaprio",
     "filename": "LeonardoDiCaprioPintura.JPEG",
-    "descriptionKey": "work.description17"
+    "descriptionKey": "work.description17",
+    "width": 1458,
+    "height": 1742
   },
   {
     "id": "mulher_flor",
     "filename": "MulherComFlor.JPEG",
-    "descriptionKey": "work.description18"
+    "descriptionKey": "work.description18",
+    "width": 1228,
+    "height": 1732
   },
   {
     "id": "baby",
     "filename": "Baby.JPEG",
-    "descriptionKey": "work.description19"
+    "descriptionKey": "work.description19",
+    "width": 1760,
+    "height": 1788
   },
   {
     "id": "mestre_joao",
     "filename": "MestreJoao.JPEG",
-    "descriptionKey": "work.description20"
+    "descriptionKey": "work.description20",
+    "width": 1770,
+    "height": 1774
   },
   {
     "id": "baby1",
     "filename": "Baby1.JPEG",
-    "descriptionKey": "work.description21"
+    "descriptionKey": "work.description21",
+    "width": 416,
+    "height": 414
   }
 ]

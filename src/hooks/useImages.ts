@@ -19,6 +19,8 @@ export function useImages({ artworks, enabled = true }: UseImagesOptions) {
         return {
           url: importImage(artwork.filename),
           description: artwork.descriptionKey, // Will be translated by the component
+          width: artwork.width,
+          height: artwork.height,
         }
       })
       return Promise.all(imageDataPromises)

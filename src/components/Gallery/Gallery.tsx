@@ -20,6 +20,8 @@ export default function Gallery({ artworks }: GalleryProps) {
   const images: ImageData[] = cachedImages.map((img, index) => ({
     url: img.url,
     description: t(artworks[index].descriptionKey),
+    width: img.width,
+    height: img.height,
   }))
 
   // Preload all images in background
@@ -73,27 +75,46 @@ export default function Gallery({ artworks }: GalleryProps) {
       <Box className={styles.imageGrid}>
         {isLoading
           ? Array.from({ length: skeletonCount }).map((_, index) => (
-              <Box key={`skeleton-${index}`} className={styles.imageCard}>
+              <Box
+                component="figure"
+                key={`skeleton-${index}`}
+                className={styles.imageFigure}
+              >
                 <Skeleton
                   variant="rectangular"
                   animation="wave"
                   className={styles.skeleton}
+                  sx={{ aspectRatio: `${artworks[index].width} / ${artworks[index].height}` }}
                 />
               </Box>
             ))
           : artworks.map((artwork, index) => (
               <Box
+                component="figure"
                 key={artwork.id}
-                className={styles.imageCard}
-                onClick={() => openModal(index)}
+                className={styles.imageFigure}
               >
-                <img
-                  src={images[index]?.url}
-                  alt={`${t('work.label')} ${index + 1}`}
-                  className={`${styles.thumbnail} ${loadedImages.has(artwork.id) ? styles.thumbnailLoaded : ''}`}
-                  loading="lazy"
-                  onLoad={() => handleImageLoad(artwork.id)}
-                />
+                <button
+                  type="button"
+                  className={styles.artworkButton}
+                  onClick={() => openModal(index)}
+                  aria-label={images[index]?.description}
+                  aria-haspopup="dialog"
+                >
+                  <img
+                    src={images[index]?.url}
+                    alt={images[index]?.description}
+                    width={artwork.width}
+                    height={artwork.height}
+                    className={`${styles.thumbnail} ${loadedImages.has(artwork.id) ? styles.thumbnailLoaded : ''}`}
+                    loading="lazy"
+                    decoding="async"
+                    onLoad={() => handleImageLoad(artwork.id)}
+                  />
+                </button>
+                <Box component="figcaption" className={styles.caption}>
+                  {images[index]?.description}
+                </Box>
               </Box>
             ))}
       </Box>
