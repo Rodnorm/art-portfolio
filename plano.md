@@ -966,15 +966,15 @@ Atualizar esta tabela somente após validação e deploy real. Todas as etapas c
 | --- | --- | --- | --- | --- |
 | Etapa 0 — Build, assets e deploy | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `ffdeb6b` | Dispensado pelo usuário; validação local | Não |
 | Etapa 1 — Tokens, paleta e tipografia | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `362ef78` | Dispensado pelo usuário; validação local | Não |
-| Etapa 2 — Header e navegação | Pendente | — | — | Não |
-| Etapa 3 — Hero | Pendente | — | — | Não |
-| Etapa 4A — Grade da galeria | Pendente | — | — | Não |
-| Etapa 4B — Modal e carrossel | Pendente | — | — | Não |
-| Etapa 5 — Sobre Mim | Pendente | — | — | Não |
-| Etapa 6 — Preços | Pendente | — | — | Não |
-| Etapa 7 — Contato e rodapé | Pendente | — | — | Não |
-| Etapa 8 — Responsividade, acessibilidade e i18n | Pendente | — | — | Não |
-| Etapa 9 — Imagens e performance | Pendente | — | — | Não |
-| Etapa 10 — Limpeza, SEO e deploy final | Pendente | — | — | Não |
+| Etapa 2 — Header e navegação | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `90da7ce` | Dispensado pelo usuário; validação local | Não |
+| Etapa 3 — Hero | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `cf876ae` | Dispensado pelo usuário; validação local | Não |
+| Etapa 4A — Grade da galeria | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `a631e5f` | Dispensado pelo usuário; validação local | Não |
+| Etapa 4B — Modal e carrossel | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `b325c9b` | Dispensado pelo usuário; validação local | Não |
+| Etapa 5 — Sobre Mim | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `b76c450` | Dispensado pelo usuário; validação local | Não |
+| Etapa 6 — Preços | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `4fa52d8` | Dispensado pelo usuário; validação local | Não |
+| Etapa 7 — Contato e rodapé | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `3afc219` | Dispensado pelo usuário; validação local | Não |
+| Etapa 8 — Responsividade, acessibilidade e i18n | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `c01464c` | Dispensado pelo usuário; validação local | Não |
+| Etapa 9 — Imagens e performance | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `818af41` | Dispensado pelo usuário; validação local | Não |
+| Etapa 10 — Limpeza, SEO e deploy final | Concluída — aguardando aprovação | `feat/portfolio-visual-refactor` / `aaeba43` | Dispensado pelo usuário; validação local | Não |
 
 **Regra de execução:** concluir uma única etapa, validar, fazer commit/push, publicar, informar URL e SHA, atualizar somente a linha correspondente e parar. A próxima etapa exige aprovação explícita.
