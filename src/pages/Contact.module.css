@@ -47,12 +47,27 @@
 .formGroup textarea {
   width: 100%;
   padding: var(--space-3) var(--space-4);
-  color: var(--color-text);
+  color: var(--color-input-text);
+  caret-color: var(--color-input-text);
   font: inherit;
   line-height: var(--line-height-body);
-  background: var(--color-paper-50);
+  background: var(--color-input-background);
   border: var(--border-width-thin) solid var(--color-border);
   border-radius: var(--radius-control);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--color-input-placeholder);
+  opacity: 1;
+}
+
+.formGroup input:-webkit-autofill,
+.formGroup input:-webkit-autofill:hover,
+.formGroup input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-input-text);
+  caret-color: var(--color-input-text);
+  box-shadow: 0 0 0 1000px var(--color-input-background) inset;
 }
 
 .formGroup textarea {
@@ -103,7 +118,7 @@
 
 .formGroup input:hover,
 .formGroup textarea:hover {
-  border-color: var(--color-ink-700);
+  border-color: var(--color-input-border-hover);
 }
 
 .submitButton {

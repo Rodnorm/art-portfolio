@@ -28,6 +28,10 @@
   --color-on-dark: var(--color-white);
   --color-focus-ring: var(--color-ochre-500);
   --color-focus-contrast: var(--color-ink-900);
+  --color-input-background: var(--color-paper-100);
+  --color-input-text: var(--color-ink-900);
+  --color-input-placeholder: var(--color-ink-700);
+  --color-input-border-hover: var(--color-ink-700);
 
   /* Typography */
   --font-family-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -92,6 +96,10 @@
   --color-on-dark: var(--color-paper-100);
   --color-focus-ring: var(--color-ochre-500);
   --color-focus-contrast: var(--color-paper-100);
+  --color-input-background: var(--color-ink-900);
+  --color-input-text: var(--color-paper-100);
+  --color-input-placeholder: var(--color-paper-200);
+  --color-input-border-hover: var(--color-paper-200);
 
   --shadow-paper: 0 0.5rem 2rem rgb(0 0 0 / 40%);
 }
