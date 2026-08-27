@@ -25,11 +25,15 @@
         "follow_me": "Me siga nas redes sociais",
         "get_in_touch": "Entre em Contato",
         "name": "Nome",
+        "email": "E-mail",
         "message": "Mensagem",
-        "send_wpp": "Enviar via WhatsApp",
-        "wpp": {
-            "message": "Olá, me chamo {{name}}. {{message}}"
-        }
+        "send": "Enviar mensagem",
+        "sending": "Enviando...",
+        "success": "Mensagem enviada. Obrigado pelo contato!",
+        "error": "Não foi possível enviar a mensagem. Tente novamente.",
+        "not_configured": "O formulário estará disponível em breve.",
+        "privacy_notice": "Seu nome, e-mail e mensagem serão processados pelo Formspree para responder ao seu contato.",
+        "privacy_link": "Política de privacidade do Formspree"
     },
     "notes": {
         "no_frames_note": "Os quadros não acompanham moldura",

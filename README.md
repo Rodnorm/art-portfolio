@@ -1,6 +1,6 @@
 # Rodrigo Normando Art
 
-Portfólio de arte tradicional em página única, com galeria, informações sobre o artista, preços e contato por WhatsApp. A interface está disponível em português, inglês e alemão.
+Portfólio de arte tradicional em página única, com galeria, informações sobre o artista, preços e formulário de contato. A interface está disponível em português, inglês e alemão.
 
 ## Requisitos
 
@@ -15,6 +15,8 @@ npm run dev
 ```
 
 O Vite inicia o servidor local na porta `3000`. Como o projeto usa a base pública `/art-portfolio/`, abra `http://localhost:3000/art-portfolio/`.
+
+Copie `.env.example` para `.env.local` e preencha `VITE_FORMSPREE_FORM_ID` para testar o envio do formulário. No GitHub Pages, configure a mesma chave como uma repository variable em **Settings → Secrets and variables → Actions → Variables**.
 
 ## Validação
 

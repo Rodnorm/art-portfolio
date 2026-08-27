@@ -25,11 +25,15 @@
         "follow_me": "Follow me on social media",
         "get_in_touch": "Get in Touch",
         "name": "Name",
+        "email": "Email",
         "message": "Message",
-        "send_wpp": "Send via WhatsApp",
-        "wpp": {
-            "message": "Hello, my name is {{name}}. {{message}}"
-        }
+        "send": "Send message",
+        "sending": "Sending...",
+        "success": "Message sent. Thank you for getting in touch!",
+        "error": "The message could not be sent. Please try again.",
+        "not_configured": "The contact form will be available soon.",
+        "privacy_notice": "Your name, email and message will be processed by Formspree to reply to your enquiry.",
+        "privacy_link": "Formspree privacy policy"
     },
     "notes": {
         "no_frames_note": "Frames are not included with the paintings",
