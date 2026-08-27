@@ -89,7 +89,7 @@
   --color-text-muted: var(--color-paper-200);
   --color-action: var(--color-ochre-500);
   --color-action-hover: var(--color-paper-200);
-  --color-on-dark: var(--color-ink-900);
+  --color-on-dark: var(--color-paper-100);
   --color-focus-ring: var(--color-ochre-500);
   --color-focus-contrast: var(--color-paper-100);
 
