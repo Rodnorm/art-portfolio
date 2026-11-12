@@ -9,6 +9,16 @@ export default function Footer() {
       <p>
         © {new Date().getFullYear()} {t('footer.footer_rights')}
       </p>
+      <nav className={styles.legalLinks} aria-label="Rechtliche Hinweise">
+        <a href="/impressum/" className={styles.legalLink}>
+          Impressum
+        </a>
+        <span>·</span>
+        <a href="/datenschutz/" className={styles.legalLink}>
+          Datenschutz
+        </a>
+      </nav>
     </footer>
   )
 }
+

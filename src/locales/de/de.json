@@ -1,4 +1,8 @@
 {
+    "meta": {
+        "title": "Ölporträts nach Foto in Essen | Rodrigo Normando",
+        "description": "Traditionelle Kunst und Auftragsmalerei in Essen. Porträts nach Foto in Öl, Graphit, Kohle und Aquarell von Rodrigo Normando."
+    },
     "traditional_art": "Traditionelle Kunst",
     "nav": {
         "home": "Startseite",
@@ -31,6 +35,8 @@
         "sending": "Wird gesendet...",
         "success": "Nachricht gesendet. Vielen Dank für Ihre Anfrage!",
         "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
+        "rate_limit_error": "Zu viele Anfragen. Bitte warten Sie kurz und versuchen Sie es erneut.",
+        "timeout_error": "Zeitüberschreitung bei der Anfrage. Bitte überprüfen Sie Ihre Internetverbindung.",
         "not_configured": "Das Kontaktformular ist in Kürze verfügbar.",
         "privacy_notice": "Ihr Name, Ihre E-Mail-Adresse und Ihre Nachricht werden über Formspree verarbeitet, um Ihre Anfrage zu beantworten.",
         "privacy_link": "Datenschutzerklärung von Formspree"
@@ -47,24 +53,24 @@
         "description1": "Chico Buarque. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
         "description2": "Leonardo DiCaprio. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
         "description3": "Terry Crews. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
-        "description4": "Aquarell auf Canson Papier 29,7 cm x 42 cm.",
-        "description5": "Graphit auf Canson Papier 29,7 cm x 42 cm.",
-        "description6": "Graphit auf Canson Papier A4.",
-        "description7": "Stift auf Canson Papier 29,7 cm x 42 cm.",
+        "description4": "Tonalstudie. Aquarell auf Canson Papier 29,7 cm x 42 cm.",
+        "description5": "Juri Gagarin. Graphit auf Canson Papier 29,7 cm x 42 cm.",
+        "description6": "Mann mit Zigarette. Graphit auf Canson Papier A4.",
+        "description7": "Mann mit Tuch. Stift auf Canson Papier 29,7 cm x 42 cm.",
         "description8": "Ney Matogrosso. Graphit und Pastell auf Toned Tan Papier 27,9 cm x 35,6 cm.",
-        "description9": "Graphit auf Canson Papier A4.",
-        "description10": "Aquarell und Stift auf Canson Papier 5 cm x 10 cm.",
-        "description11": "Öl auf vorbereitetem Holz A4.",
-        "description12": "Öl auf vorbereitetem Holz A4.",
-        "description13": "Graphit auf Canson Papier A4.",
-        "description14": "Kopie eines Werks des Malers Alphonse Mucha. Im Art Nouveau Stil gefertigt. Aquarell und Stift auf Canson Papier 29,7 cm x 42 cm.",
-        "description15": "Öl auf Leinwand. 60 cm x 50 cm.",
-        "description16": "Öl auf Leinwand. 60 cm x 50 cm.",
-        "description17": "Öl auf Leinwand. 60 cm x 50 cm.",
-        "description18": "Öl auf vorbereitetem Holz A4.",
-        "description19": "Baby. Öl auf Leinwand 15cmx15cm.",
-        "description20": "Mestre Joao. Öl auf Leinwand 15cmx15cm.",
-        "description21": "Baby. Öl auf Leinwand 15cmx15cm."
+        "description9": "Frau mit Lächeln. Graphit auf Canson Papier A4.",
+        "description10": "Dorfansicht. Aquarell und Stift auf Canson Papier 5 cm x 10 cm.",
+        "description11": "Katze Lily. Öl auf vorbehandeltem Holz A4.",
+        "description12": "Kater Frajola. Öl auf vorbehandeltem Holz A4.",
+        "description13": "Junge trinkt Wasser. Graphit auf Canson Papier A4.",
+        "description14": "Kopie eines Werks von Alphonse Mucha im Jugendstil / Art Nouveau. Aquarell und Stift auf Canson Papier 29,7 cm x 42 cm.",
+        "description15": "Frau mit lockigem Haar. Öl auf Leinwand 60 cm x 50 cm.",
+        "description16": "Terry Crews. Ölgemälde auf Leinwand 60 cm x 50 cm.",
+        "description17": "Leonardo DiCaprio. Ölgemälde auf Leinwand 60 cm x 50 cm.",
+        "description18": "Frau mit Blume. Öl auf vorbehandeltem Holz A4.",
+        "description19": "Baby. Öl auf Leinwand 15 cm x 15 cm.",
+        "description20": "Mestre João. Öl auf Leinwand 15 cm x 15 cm.",
+        "description21": "Studie Baby. Öl auf Leinwand 15 cm x 15 cm."
     },
     "carousel": {
         "image_viewer": "Vergrößerte Ansicht des Kunstwerks",
@@ -78,6 +84,7 @@
         "price": "Preis",
         "note": "Anmerkung",
         "delivery_time": "Lieferzeit",
+        "commission_notice": "Alle Porträts werden nach fotografischer Vorlage individuell im Atelier in Essen angefertigt. Die Versandkosten werden je nach Zielort separat berechnet.",
         "pencil_portrait": {
             "name": "Bleistiftporträt - Größe A4 (1 Person)",
             "price": "100 Euro + Versand",

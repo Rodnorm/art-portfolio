@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Drawer,
   IconButton,
@@ -42,9 +41,33 @@ export default function Navbar() {
   const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof document === 'undefined') return 'light'
     return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
   })
   const menuButtonRef = useRef<HTMLButtonElement>(null)
+
+  const currentLang = i18n.resolvedLanguage ?? i18n.language ?? 'de'
+  const isLegalPage =
+    typeof window !== 'undefined'
+      ? window.location.pathname.startsWith('/impressum') ||
+        window.location.pathname.startsWith('/datenschutz')
+      : false
+
+  const getTargetUrlForLang = (targetLang: string) => {
+    if (typeof window !== 'undefined' && !isLegalPage) {
+      const hash = window.location.hash || ''
+      return `/${targetLang}/${hash}`
+    }
+    return `/${targetLang}/`
+  }
+
+  const getNavLinkHref = (link: NavLink) => {
+    if (link.external) return link.href
+    if (isLegalPage) {
+      return `/${currentLang}/${link.href}`
+    }
+    return link.href
+  }
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -87,7 +110,10 @@ export default function Navbar() {
     <>
       <AppBar component="header" className={styles.appBar} elevation={0}>
         <Toolbar className={styles.toolbar}>
-          <a className={styles.brand} href="#home">
+          <a
+            className={styles.brand}
+            href={isLegalPage ? `/${currentLang}/` : '#home'}
+          >
             Rodrigo Normando
           </a>
 
@@ -101,7 +127,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   className={styles.navigationLink}
-                  href={link.href}
+                  href={getNavLinkHref(link)}
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
                 >
@@ -116,16 +142,17 @@ export default function Navbar() {
               aria-label={t('nav.language')}
             >
               {languages.map((language) => (
-                <Button
+                <a
                   key={language.code}
+                  href={getTargetUrlForLang(language.code)}
                   className={`${styles.languageButton} ${
-                    i18n.resolvedLanguage === language.code ? styles.languageActive : ''
+                    currentLang === language.code ? styles.languageActive : ''
                   }`}
                   onClick={() => changeLanguage(language.code)}
-                  aria-pressed={i18n.resolvedLanguage === language.code}
+                  aria-current={currentLang === language.code ? 'true' : undefined}
                 >
                   {language.code.toUpperCase()}
-                </Button>
+                </a>
               ))}
             </Box>
 
@@ -188,7 +215,7 @@ export default function Navbar() {
             <ListItem key={link.name} disablePadding>
               <ListItemButton
                 component="a"
-                href={link.href}
+                href={getNavLinkHref(link)}
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
                 onClick={closeDrawer}
@@ -209,16 +236,17 @@ export default function Navbar() {
             aria-label={t('nav.language')}
           >
             {languages.map((language) => (
-              <Button
+              <a
                 key={language.code}
+                href={getTargetUrlForLang(language.code)}
                 className={`${styles.languageButton} ${
-                  i18n.resolvedLanguage === language.code ? styles.languageActive : ''
+                  currentLang === language.code ? styles.languageActive : ''
                 }`}
                 onClick={() => changeLanguage(language.code)}
-                aria-pressed={i18n.resolvedLanguage === language.code}
+                aria-current={currentLang === language.code ? 'true' : undefined}
               >
                 {language.code.toUpperCase()}
-              </Button>
+              </a>
             ))}
           </Box>
         </Box>

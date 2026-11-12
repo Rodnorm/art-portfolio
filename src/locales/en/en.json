@@ -1,9 +1,13 @@
 {
+    "meta": {
+        "title": "Commissioned Oil Portraits | Rodrigo Normando",
+        "description": "Traditional art and commissioned portraits in Essen. Custom oil paintings, pencil, charcoal and watercolor by Rodrigo Normando."
+    },
     "traditional_art": "Traditional Art",
     "nav": {
         "home": "Home",
         "contact": "Contact",
-        "about": "About Me",
+        "about": "About",
         "work": "My Work",
         "prices": "Prices",
         "tiktok": "TikTok",
@@ -16,94 +20,97 @@
         "navigation_menu": "Navigation menu",
         "main_navigation": "Main navigation",
         "language": "Language",
-        "toggle_theme": "Toggle dark/light theme"
+        "toggle_theme": "Toggle light/dark theme"
     },
     "about": {
-        "experience": "I am an artist with years of experience in drawing with pencil, charcoal, and pens, as well as painting in oil and watercolor. I enjoy creating portraits of people and animals, but I also work with landscapes. My passion for art motivates me to explore different techniques and styles, always seeking to capture the beauty of the world around me. Currently, I reside and work in the city of Essen in Germany."
+        "experience": "I am an artist with years of experience drawing with pencil, charcoal, and pens, as well as painting in oil and watercolor. I enjoy making portraits of people and animals, but I also work with landscapes. My passion for art motivates me to explore different techniques and styles, always striving to capture the beauty of the world around me. Currently I live and work in the city of Essen, Germany."
     },
     "contact": {
         "follow_me": "Follow me on social media",
-        "get_in_touch": "Get in Touch",
+        "get_in_touch": "Get in touch",
         "name": "Name",
         "email": "Email",
         "message": "Message",
         "send": "Send message",
         "sending": "Sending...",
-        "success": "Message sent. Thank you for getting in touch!",
-        "error": "The message could not be sent. Please try again.",
+        "success": "Message sent. Thank you for your inquiry!",
+        "error": "Failed to send message. Please try again.",
+        "rate_limit_error": "Too many requests. Please wait a moment and try again.",
+        "timeout_error": "Request timed out. Please check your internet connection.",
         "not_configured": "The contact form will be available soon.",
-        "privacy_notice": "Your name, email and message will be processed by Formspree to reply to your enquiry.",
+        "privacy_notice": "Your name, email address and message will be processed via Formspree to reply to your inquiry.",
         "privacy_link": "Formspree privacy policy"
     },
     "notes": {
-        "no_frames_note": "Frames are not included with the paintings",
-        "one_month_note": "It takes one month to be ready due to drying time."
+        "no_frames_note": "Paintings are delivered without frame",
+        "one_month_note": "Requires one month to be ready due to drying time."
     },
     "footer": {
         "footer_rights": "All rights reserved"
     },
     "work": {
-        "label": "Works",
+        "label": "Work",
         "description1": "Chico Buarque. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
         "description2": "Leonardo DiCaprio. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
         "description3": "Terry Crews. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
-        "description4": "Watercolor on Canson paper 29.7 cm x 42 cm.",
-        "description5": "Graphite on Canson paper 29.7 cm x 42 cm.",
-        "description6": "Graphite on Canson paper A4.",
-        "description7": "Pen on Canson paper 29.7 cm x 42 cm.",
+        "description4": "Tonal study. Watercolor on Canson paper 29.7 cm x 42 cm.",
+        "description5": "Yuri Gagarin. Graphite on Canson paper 29.7 cm x 42 cm.",
+        "description6": "Man with cigarette. Graphite on Canson paper A4.",
+        "description7": "Man with cloth. Pen on Canson paper 29.7 cm x 42 cm.",
         "description8": "Ney Matogrosso. Graphite and pastel on Toned Tan paper 27.9 cm x 35.6 cm.",
-        "description9": "Graphite on Canson paper A4.",
-        "description10": "Watercolor and pen on Canson paper 5 cm x 10 cm.",
-        "description11": "Oil on prepared wood A4.",
-        "description12": "Oil on prepared wood A4.",
-        "description13": "Graphite on Canson paper A4.",
-        "description14": "Copy of a work by painter Alphonse Mucha. Made in the Art Nouveau style. Watercolor and pen on Canson paper 29.7 cm x 42 cm.",
-        "description15": "Oil on canvas. 60 cm x 50 cm.",
-        "description16": "Oil on canvas. 60 cm x 50 cm.",
-        "description17": "Oil on canvas. 60 cm x 50 cm.",
-        "description18": "Oil on prepared wood A4.",
-        "description19": "Baby. Oil on canvas 15cmx15cm.",
-        "description20": "Mestre Joao. Oil on canvas 15cmx15cm.",
-        "description21": "Baby. Oil on canvas 15cmx15cm."
+        "description9": "Smiling woman. Graphite on Canson paper A4.",
+        "description10": "Village. Watercolor and pen on Canson paper 5 cm x 10 cm.",
+        "description11": "Lily the cat. Oil on prepared wood A4.",
+        "description12": "Frajola the cat. Oil on prepared wood A4.",
+        "description13": "Boy drinking water. Graphite on Canson paper A4.",
+        "description14": "Copy of work by Alphonse Mucha in Art Nouveau style. Watercolor and pen on Canson paper 29.7 cm x 42 cm.",
+        "description15": "Woman with curly hair. Oil on canvas 60 cm x 50 cm.",
+        "description16": "Terry Crews. Oil painting on canvas 60 cm x 50 cm.",
+        "description17": "Leonardo DiCaprio. Oil painting on canvas 60 cm x 50 cm.",
+        "description18": "Woman with flower. Oil on prepared wood A4.",
+        "description19": "Baby. Oil on canvas 15 cm x 15 cm.",
+        "description20": "Mestre João. Oil on canvas 15 cm x 15 cm.",
+        "description21": "Baby study. Oil on canvas 15 cm x 15 cm."
     },
     "carousel": {
         "image_viewer": "Enlarged artwork view",
         "previous": "Previous",
         "next": "Next",
-        "zoom_in": "Zoom In",
+        "zoom_in": "Enlarge",
         "close": "Close"
     },
     "prices": {
         "prices": "Prices",
         "price": "Price",
         "note": "Note",
-        "delivery_time": "Delivery Time",
+        "delivery_time": "Delivery time",
+        "commission_notice": "All portraits are custom-made from reference photographs at the studio in Essen. Shipping costs are calculated separately depending on the destination.",
         "pencil_portrait": {
-            "name": "Pencil Portrait - Size A4 (1 person)",
-            "price": "100 euros + shipping",
-            "additional": "Additional person: + 50 euros",
-            "note": "Takes two weeks to be ready."
+            "name": "Pencil portrait - Size A4 (1 person)",
+            "price": "100 Euro + shipping",
+            "additional": "Additional person: + 50 Euro",
+            "note": "Ready in two weeks."
         },
         "oil_portrait_a4": {
-            "name": "Oil Portrait - Size A4 (1 person)",
-            "price": "220 euros + shipping",
-            "note": "Takes one month to be ready due to drying time."
+            "name": "Oil portrait - Size A4 (1 person)",
+            "price": "220 Euro + shipping",
+            "note": "Ready in one month due to paint drying."
         },
         "oil_portrait_60x50": {
-            "name": "Oil Portrait - Size 60x50 cm (1 person)",
-            "price": "480 euros + shipping",
-            "additional": "Additional person: + 200 euros",
-            "note": "Takes one month to be ready due to drying time."
+            "name": "Oil portrait - Size 60x50 cm (1 person)",
+            "price": "480 Euro + shipping",
+            "additional": "Additional person: + 200 Euro",
+            "note": "Ready in one month due to paint drying."
         },
         "oil_portrait_pet": {
-            "name": "Oil Portrait of Animals - Size A4",
-            "price": "200 euros per animal + shipping",
-            "note": "Takes one month to be ready due to drying time."
+            "name": "Pet oil portrait - Size A4",
+            "price": "200 Euro per pet + shipping",
+            "note": "Ready in one month due to paint drying."
         },
         "watercolor": {
-            "name": "Art Nouveau Style Watercolor - Size 29x42",
-            "price": "180 euros + shipping",
-            "note": "Takes two weeks to be ready."
+            "name": "Art Nouveau watercolor - Size 29x42",
+            "price": "180 Euro + shipping",
+            "note": "Ready in two weeks."
         }
     }
 }

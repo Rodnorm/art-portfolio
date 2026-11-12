@@ -1,4 +1,8 @@
 {
+    "meta": {
+        "title": "Retratos a óleo por encomenda | Rodrigo Normando",
+        "description": "Arte tradicional e retratos sob encomenda em Essen. Pinturas a óleo, desenhos a lápis, carvão e aquarela por Rodrigo Normando."
+    },
     "traditional_art": "Arte Tradicional",
     "nav": {
         "home": "Home",
@@ -31,6 +35,8 @@
         "sending": "Enviando...",
         "success": "Mensagem enviada. Obrigado pelo contato!",
         "error": "Não foi possível enviar a mensagem. Tente novamente.",
+        "rate_limit_error": "Muitas tentativas em pouco tempo. Por favor, aguarde alguns instantes e tente novamente.",
+        "timeout_error": "Tempo limite de conexão excedido. Por favor, verifique sua conexão com a internet.",
         "not_configured": "O formulário estará disponível em breve.",
         "privacy_notice": "Seu nome, e-mail e mensagem serão processados pelo Formspree para responder ao seu contato.",
         "privacy_link": "Política de privacidade do Formspree"
@@ -47,24 +53,24 @@
         "description1": "Chico Buarque. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
         "description2": "Leonardo DiCaprio. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
         "description3": "Terry Crews. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
-        "description4": "Aquarela sobre Papel Canson 29,7 cm x 42cm.",
-        "description5": "Grafite sobre Papel Canson 29,7 cm x 42cm.",
-        "description6": "Grafite sobre Papel Canson A4.",
-        "description7": "Caneta sobre Papel Canson 29,7 cm x 42cm.",
+        "description4": "Estudo tonal. Aquarela sobre Papel Canson 29,7 cm x 42cm.",
+        "description5": "Yuri Gagarin. Grafite sobre Papel Canson 29,7 cm x 42cm.",
+        "description6": "Homem com cigarro. Grafite sobre Papel Canson A4.",
+        "description7": "Homem com pano. Caneta sobre Papel Canson 29,7 cm x 42cm.",
         "description8": "Ney Matogrosso. Grafite e pastel sobre papel Toned Tan 27,9cm x 35,6cm.",
-        "description9": "Grafite sobre Papel Canson A4.",
-        "description10": "Aquarela e caneta sobre Papel Canson 5cm x 10cm.",
-        "description11": "Óleo sobre madeira preparada A4.",
-        "description12": "Óleo sobre madeira preparada A4.",
-        "description13": "Grafite sobre Papel Canson A4.",
-        "description14": "Cópia de uma obra do pintor Alphonse Mucha. Feita no estilo Art Nouveau. Aquarela e caneta sobre Papel Canson 29,7 cm x 42cm.",
-        "description15": "Óleo sobre tela. 60cm x 50cm.",
-        "description16": "Óleo sobre tela. 60cm x 50cm.",
-        "description17": "Óleo sobre tela. 60cm x 50cm.",
-        "description18": "Óleo sobre madeira preparada tamanho A4.",
-        "description19": "Baby. Óleo sobre tela 15cmx15cm.",
-        "description20": "Mestre Joao. Óleo sobre tela 15cmx15cm.",
-        "description21": "Baby. Óleo sobre tela 15cmx15cm."
+        "description9": "Mulher com sorriso. Grafite sobre Papel Canson A4.",
+        "description10": "Vila. Aquarela e caneta sobre Papel Canson 5cm x 10cm.",
+        "description11": "Gata Lily. Óleo sobre madeira preparada A4.",
+        "description12": "Gato Frajola. Óleo sobre madeira preparada A4.",
+        "description13": "Garoto bebendo água. Grafite sobre Papel Canson A4.",
+        "description14": "Cópia de obra de Alphonse Mucha em estilo Art Nouveau. Aquarela e caneta sobre Papel Canson 29,7 cm x 42cm.",
+        "description15": "Mulher com cabelo cacheado. Óleo sobre tela 60cm x 50cm.",
+        "description16": "Terry Crews. Pintura a óleo sobre tela 60cm x 50cm.",
+        "description17": "Leonardo DiCaprio. Pintura a óleo sobre tela 60cm x 50cm.",
+        "description18": "Mulher com flor. Óleo sobre madeira preparada tamanho A4.",
+        "description19": "Baby. Óleo sobre tela 15cm x 15cm.",
+        "description20": "Mestre João. Óleo sobre tela 15cm x 15cm.",
+        "description21": "Estudo Baby. Óleo sobre tela 15cm x 15cm."
     },
     "carousel": {
         "image_viewer": "Visualização ampliada da obra",
@@ -78,6 +84,7 @@
         "price": "Preço",
         "note": "Nota",
         "delivery_time": "Tempo de entrega",
+        "commission_notice": "Todos os retratos são feitos sob encomenda a partir de fotografias no ateliê em Essen. Os custos de frete são calculados separadamente conforme o destino.",
         "pencil_portrait": {
             "name": "Retrato a lápis - Tamanho A4 (1 pessoa)",
             "price": "300 reais + frete",
