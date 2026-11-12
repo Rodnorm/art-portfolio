@@ -80,7 +80,7 @@
         "delivery_time": "Tempo de entrega",
         "pencil_portrait": {
             "name": "Retrato a lápis - Tamanho A4 (1 pessoa)",
-            "price": "550 reais + frete",
+            "price": "300 reais + frete",
             "additional": "Pessoa adicional: + 150 reais",
             "note": "Necessita de duas semanas para ficar pronto."
         },
@@ -102,7 +102,7 @@
         },
         "watercolor": {
             "name": "Aquarela Estilo Art Nouveau - Tamanho 29x42",
-            "price": "300 reais + frete",
+            "price": "550 reais + frete",
             "note": "Necessita de duas semanas para ficar pronto."
         }
     }
