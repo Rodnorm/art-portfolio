@@ -12,3 +12,24 @@
   font-size: var(--font-size-sm);
   line-height: var(--line-height-body);
 }
+
+.legalLinks {
+  margin-top: var(--space-3);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.legalLink {
+  color: var(--color-on-dark);
+  text-decoration: underline;
+  opacity: 0.85;
+  transition: opacity var(--duration-control) var(--easing-standard);
+}
+
+.legalLink:hover,
+.legalLink:focus-visible {
+  opacity: 1;
+}
+

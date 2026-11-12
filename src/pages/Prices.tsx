@@ -26,6 +26,11 @@ export default function Prices() {
     <section className={styles.section} id="precos">
         <div className={styles.content}>
           <h2 className={styles.title}>{t('prices.prices')}</h2>
+          {i18n.exists('prices.commission_notice') && (
+            <p className={styles.commissionNotice}>
+              {t('prices.commission_notice')}
+            </p>
+          )}
 
           <ol className={styles.list}>
             {priceList.map((item, index) => (

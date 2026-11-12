@@ -9,7 +9,13 @@ const TIKTOK_URL = 'https://www.tiktok.com/@atelier.normando'
 const FORMSPREE_PRIVACY_URL = 'https://formspree.io/legal/privacy-policy/'
 const FORMSPREE_FORM_ID = import.meta.env.VITE_FORMSPREE_FORM_ID?.trim()
 
-type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error'
+type SubmissionStatus =
+  | 'idle'
+  | 'submitting'
+  | 'success'
+  | 'error'
+  | 'rate_limit'
+  | 'timeout'
 
 const initialFormData = {
   name: '',
@@ -42,31 +48,42 @@ export default function Contact() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    if (!FORMSPREE_FORM_ID) {
-      setSubmissionStatus('error')
+    if (!FORMSPREE_FORM_ID || isSubmitting) {
+      if (!FORMSPREE_FORM_ID) {
+        setSubmissionStatus('error')
+      }
       return
     }
 
     setSubmissionStatus('submitting')
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 15000)
 
     try {
       const response = await fetch(
         `https://formspree.io/f/${FORMSPREE_FORM_ID}`,
         {
           method: 'POST',
+          signal: controller.signal,
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            message: formData.message.trim(),
             _gotcha: formData.website,
             language: i18n.resolvedLanguage ?? i18n.language,
           }),
         }
       )
+      clearTimeout(timeoutId)
+
+      if (response.status === 429) {
+        setSubmissionStatus('rate_limit')
+        return
+      }
 
       if (!response.ok) {
         throw new Error('Form submission failed')
@@ -74,134 +91,155 @@ export default function Contact() {
 
       setFormData(initialFormData)
       setSubmissionStatus('success')
-    } catch {
-      setSubmissionStatus('error')
+    } catch (err: unknown) {
+      clearTimeout(timeoutId)
+      if (err instanceof Error && err.name === 'AbortError') {
+        setSubmissionStatus('timeout')
+      } else {
+        setSubmissionStatus('error')
+      }
     }
   }
 
+  const isAlert =
+    submissionStatus === 'error' ||
+    submissionStatus === 'rate_limit' ||
+    submissionStatus === 'timeout'
+
   return (
     <section className={styles.section} id="contato">
-        <div className={styles.layout}>
-          <div className={styles.headingGroup}>
-            <h2 className={styles.title}>{t('contact.get_in_touch')}</h2>
+      <div className={styles.layout}>
+        <div className={styles.headingGroup}>
+          <h2 className={styles.title}>{t('contact.get_in_touch')}</h2>
 
-            <div className={styles.socialLinks}>
-              <p>{t('contact.follow_me')}:</p>
-              <div className={styles.socialIcons}>
-                <a
-                  href={INSTAGRAM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialIcon}
-                  aria-label="Instagram"
-                >
-                  <img src={InstagramIcon} alt="" width={30} height={30} />
-                </a>
-
-                <a
-                  href={TIKTOK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialIcon}
-                  aria-label="TikTok"
-                >
-                  <img src={TikTokIcon} alt="" width={30} height={30} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <form
-            className={styles.form}
-            onSubmit={handleSubmit}
-            aria-describedby="contact-privacy contact-status"
-          >
-            <div className={styles.formGroup}>
-              <label htmlFor="name">{t('contact.name')}:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                autoComplete="name"
-              />
-            </div>
-
-            <div className={styles.formGroup}>
-              <label htmlFor="email">{t('contact.email')}:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                autoComplete="email"
-              />
-            </div>
-
-            <div className={styles.formGroup}>
-              <label htmlFor="message">{t('contact.message')}:</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className={styles.honeypot} aria-hidden="true">
-              <label htmlFor="website">Website</label>
-              <input
-                type="text"
-                id="website"
-                name="website"
-                value={formData.website}
-                onChange={handleChange}
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
-
-            <p className={styles.privacyNotice} id="contact-privacy">
-              {t('contact.privacy_notice')}{' '}
+          <div className={styles.socialLinks}>
+            <p>{t('contact.follow_me')}:</p>
+            <div className={styles.socialIcons}>
               <a
-                href={FORMSPREE_PRIVACY_URL}
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                className={styles.socialIcon}
+                aria-label="Instagram"
               >
-                {t('contact.privacy_link')}
+                <img src={InstagramIcon} alt="" width={30} height={30} />
               </a>
-            </p>
 
-            {!isConfigured && (
-              <p className={styles.configurationNotice} role="status">
-                {t('contact.not_configured')}
-              </p>
-            )}
-
-            <p
-              className={styles.submissionStatus}
-              id="contact-status"
-              role={submissionStatus === 'error' ? 'alert' : 'status'}
-              aria-live="polite"
-            >
-              {submissionStatus === 'success' && t('contact.success')}
-              {submissionStatus === 'error' && t('contact.error')}
-            </p>
-
-            <button
-              className={styles.submitButton}
-              type="submit"
-              disabled={isSubmitting || !isConfigured}
-            >
-              {isSubmitting ? t('contact.sending') : t('contact.send')}
-            </button>
-          </form>
+              <a
+                href={TIKTOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialIcon}
+                aria-label="TikTok"
+              >
+                <img src={TikTokIcon} alt="" width={30} height={30} />
+              </a>
+            </div>
+          </div>
         </div>
+
+        <form
+          className={styles.form}
+          onSubmit={handleSubmit}
+          aria-describedby="contact-privacy contact-status"
+        >
+          <div className={styles.formGroup}>
+            <label htmlFor="name">{t('contact.name')}:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              maxLength={100}
+              autoComplete="name"
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="email">{t('contact.email')}:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              maxLength={150}
+              autoComplete="email"
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="message">{t('contact.message')}:</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              maxLength={3000}
+            />
+          </div>
+
+          <div className={styles.honeypot} aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
+          <p className={styles.privacyNotice} id="contact-privacy">
+            {t('contact.privacy_notice')}{' '}
+            <a
+              href={FORMSPREE_PRIVACY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('contact.privacy_link')}
+            </a>
+          </p>
+
+          {!isConfigured && (
+            <p className={styles.configurationNotice} role="status">
+              {t('contact.not_configured')}
+            </p>
+          )}
+
+          <p
+            className={styles.submissionStatus}
+            id="contact-status"
+            role={isAlert ? 'alert' : 'status'}
+            aria-live="polite"
+          >
+            {submissionStatus === 'success' && t('contact.success')}
+            {submissionStatus === 'error' && t('contact.error')}
+            {submissionStatus === 'rate_limit' &&
+              (i18n.exists('contact.rate_limit_error')
+                ? t('contact.rate_limit_error')
+                : t('contact.error'))}
+            {submissionStatus === 'timeout' &&
+              (i18n.exists('contact.timeout_error')
+                ? t('contact.timeout_error')
+                : t('contact.error'))}
+          </p>
+
+          <button
+            className={styles.submitButton}
+            type="submit"
+            disabled={isSubmitting || !isConfigured}
+          >
+            {isSubmitting ? t('contact.sending') : t('contact.send')}
+          </button>
+        </form>
+      </div>
     </section>
   )
 }

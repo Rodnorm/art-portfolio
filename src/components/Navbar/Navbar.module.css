@@ -61,12 +61,19 @@
 }
 
 .languageButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 2.75rem !important;
   min-height: 2.75rem;
   padding: var(--space-2) !important;
   color: var(--color-text-muted) !important;
   border: var(--border-width-thin) solid transparent !important;
   border-radius: var(--radius-pill) !important;
+  text-decoration: none !important;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  box-sizing: border-box;
 }
 
 .languageActive {

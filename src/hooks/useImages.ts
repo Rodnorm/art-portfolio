@@ -7,12 +7,20 @@ const generatedImages = import.meta.glob<string>('../assets/generated/*.webp', {
   import: 'default',
 })
 
+const originalImages = import.meta.glob<string>('../assets/img/*.{JPEG,jpg,png}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+
 interface UseImagesOptions {
   artworks: Artwork[]
   enabled?: boolean
 }
 
 function importImage(filename: string): string {
+  const match = originalImages[`../assets/img/${filename}`]
+  if (match) return match
   return new URL(`../assets/img/${filename}?url`, import.meta.url).href
 }
 
@@ -22,34 +30,36 @@ function generatedImage(filename: string): string {
   return image
 }
 
+export function getInitialImageData(artworks: Artwork[]): ImageData[] {
+  return artworks.map((artwork) => ({
+    url: importImage(artwork.filename),
+    thumbnailSrcSet: [
+      `${generatedImage(`${artwork.id}-thumb-480.webp`)} 480w`,
+      `${generatedImage(`${artwork.id}-thumb-960.webp`)} 960w`,
+    ].join(', '),
+    fullUrl: generatedImage(`${artwork.id}-full-1600.webp`),
+    description: artwork.descriptionKey,
+    width: artwork.width,
+    height: artwork.height,
+  }))
+}
+
 export function useImages({ artworks, enabled = true }: UseImagesOptions) {
-  const { data: images, isLoading, error } = useQuery<ImageData[], Error>({
+  const initialData = getInitialImageData(artworks)
+
+  const { data: images = initialData, error } = useQuery<ImageData[], Error>({
     queryKey: ['images', artworks.map((a) => a.id).join(',')],
-    queryFn: async () => {
-      // Preload all images and return their URLs with descriptions
-      const imageDataPromises = artworks.map(async (artwork) => {
-        return {
-          url: importImage(artwork.filename),
-          thumbnailSrcSet: [
-            `${generatedImage(`${artwork.id}-thumb-480.webp`)} 480w`,
-            `${generatedImage(`${artwork.id}-thumb-960.webp`)} 960w`,
-          ].join(', '),
-          fullUrl: generatedImage(`${artwork.id}-full-1600.webp`),
-          description: artwork.descriptionKey, // Will be translated by the component
-          width: artwork.width,
-          height: artwork.height,
-        }
-      })
-      return Promise.all(imageDataPromises)
-    },
+    queryFn: async () => initialData,
+    initialData,
     enabled,
-    staleTime: Infinity, // Images don't change during the session
-    gcTime: 1000 * 60 * 30, // 30 minutes cache
+    staleTime: Infinity,
+    gcTime: 1000 * 60 * 30,
   })
 
   return {
-    images: images || [],
-    isLoading,
+    images,
+    isLoading: false,
     error,
   }
 }
+

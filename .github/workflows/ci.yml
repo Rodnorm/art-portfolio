@@ -30,3 +30,6 @@ jobs:
         env:
           # Skip type checking for faster CI
           TSC_COMPILE_ON_ERROR: 'true'
+
+      - name: Run SSG verification tests
+        run: npm test

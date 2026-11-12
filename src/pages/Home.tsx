@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Rodrigo Normando"
-        description="Arte Tradicional - Desenhos a lápis, carvão e pinturas a óleo e aquarela por Rodrigo Normando."
+        title={t('meta.title')}
+        description={t('meta.description')}
       />
       <Box component="section" id="home">
         <picture className="hero-media" aria-hidden="true">

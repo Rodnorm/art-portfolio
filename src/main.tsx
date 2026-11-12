@@ -7,11 +7,25 @@ import theme from './styles/theme'
 import './styles/tokens.css'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>,
-)
+const rootElement = document.getElementById('root')!
+
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(
+    rootElement,
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>,
+  )
+} else {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </React.StrictMode>,
+  )
+}
