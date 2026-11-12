@@ -80,29 +80,29 @@
         "delivery_time": "Delivery Time",
         "pencil_portrait": {
             "name": "Pencil Portrait - Size A4 (1 person)",
-            "price": "30 euros + shipping",
-            "additional": "Additional person: + 15 euros",
+            "price": "100 euros + shipping",
+            "additional": "Additional person: + 50 euros",
             "note": "Takes two weeks to be ready."
         },
         "oil_portrait_a4": {
             "name": "Oil Portrait - Size A4 (1 person)",
-            "price": "80 euros + shipping",
+            "price": "220 euros + shipping",
             "note": "Takes one month to be ready due to drying time."
         },
         "oil_portrait_60x50": {
             "name": "Oil Portrait - Size 60x50 cm (1 person)",
-            "price": "120 euros + shipping",
-            "additional": "Additional person: + 40 euros",
+            "price": "480 euros + shipping",
+            "additional": "Additional person: + 200 euros",
             "note": "Takes one month to be ready due to drying time."
         },
         "oil_portrait_pet": {
             "name": "Oil Portrait of Animals - Size A4",
-            "price": "50 euros per animal + shipping",
+            "price": "200 euros per animal + shipping",
             "note": "Takes one month to be ready due to drying time."
         },
         "watercolor": {
             "name": "Art Nouveau Style Watercolor - Size 29x42",
-            "price": "50 euros + shipping",
+            "price": "180 euros + shipping",
             "note": "Takes two weeks to be ready."
         }
     }
